@@ -1,13 +1,260 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="0; url=pages/home.html">
-  <title>Sabari Craft</title>
+
+  <title>Sabari Craft | Loading</title>
+
+  <meta name="theme-color" content="#2D1B12">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff8e9;
+      background:
+        radial-gradient(circle at 50% 40%, #654326 0%, #3c281b 38%, #1c120d 100%);
+    }
+
+    .loader-container {
+      width: 100%;
+      padding: 24px;
+      text-align: center;
+      animation: fadeIn 1s ease both;
+    }
+
+    /* Decorative glowing circle */
+    .loader-symbol {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(231, 190, 105, 0.45);
+      border-radius: 50%;
+      box-shadow:
+        0 0 35px rgba(218, 165, 72, 0.15),
+        inset 0 0 25px rgba(218, 165, 72, 0.08);
+    }
+
+    .loader-symbol::before,
+    .loader-symbol::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .loader-symbol::before {
+      inset: 9px;
+      border: 2px solid transparent;
+      border-top-color: #f5d58a;
+      border-right-color: #c49343;
+      animation: rotate 2s linear infinite;
+    }
+
+    .loader-symbol::after {
+      inset: -7px;
+      border: 1px dashed rgba(238, 204, 132, 0.5);
+      animation: rotateReverse 12s linear infinite;
+    }
+
+    .om-symbol {
+      color: #f5d58a;
+      font-size: 57px;
+      font-family: Georgia, serif;
+      text-shadow: 0 0 22px rgba(245, 213, 138, 0.35);
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    .brand-name {
+      color: #f5d58a;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 6vw, 43px);
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .tagline {
+      margin-top: 12px;
+      color: #e5d3b4;
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* Loading bar */
+    .progress-track {
+      width: min(230px, 75%);
+      height: 3px;
+      margin: 32px auto 18px;
+      overflow: hidden;
+      border-radius: 20px;
+      background: rgba(255, 248, 233, 0.17);
+    }
+
+    .progress-bar {
+      width: 40%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(
+        90deg,
+        #a46f2d,
+        #ffe6a4,
+        #c49343
+      );
+      animation: loading 1.5s ease-in-out infinite;
+    }
+
+    .loading-text {
+      color: #e5d3b4;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      animation: textPulse 1.5s ease-in-out infinite;
+    }
+
+    .loading-dots::after {
+      content: "";
+      animation: dots 1.5s steps(4, end) infinite;
+    }
+
+    .footer-text {
+      margin-top: 45px;
+      color: #bba98e;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .open-link {
+      display: inline-block;
+      margin-top: 22px;
+      color: #f5d58a;
+      font-size: 13px;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    @keyframes rotate {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes rotateReverse {
+      to { transform: rotate(-360deg); }
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        opacity: 0.8;
+        transform: scale(0.96);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes loading {
+      0% { transform: translateX(-110%); }
+      100% { transform: translateX(280%); }
+    }
+
+    @keyframes textPulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes dots {
+      0% { content: ""; }
+      25% { content: "."; }
+      50% { content: ".."; }
+      75%, 100% { content: "..."; }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .loader-symbol {
+        width: 125px;
+        height: 125px;
+      }
+
+      .om-symbol {
+        font-size: 47px;
+      }
+
+      .tagline {
+        font-size: 10px;
+        letter-spacing: 2px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <p>Opening Sabari Craft...</p>
-  <a href="pages/home.html">Open website</a>
+  <main class="loader-container">
+    <div class="loader-symbol" aria-hidden="true">
+      <span class="om-symbol">ॐ</span>
+    </div>
+
+    <h1 class="brand-name">Sabari Craft</h1>
+
+    <p class="tagline">Tradition · Devotion · Craftsmanship</p>
+
+    <div
+      class="progress-track"
+      role="progressbar"
+      aria-label="Loading website"
+    >
+      <div class="progress-bar"></div>
+    </div>
+
+    <p class="loading-text">
+      Preparing your experience<span class="loading-dots"></span>
+    </p>
+
+    <p class="footer-text">
+      MADE WITH DEVOTION
+    </p>
+
+    <a class="open-link" href="pages/home.html">
+      Enter Sabari Craft
+    </a>
+  </main>
+
+  <script>
+    // Redirect to the homepage after a short loading animation.
+    window.setTimeout(() => {
+      window.location.replace("pages/home.html");
+    }, 2500);
+  </script>
 </body>
 </html>
