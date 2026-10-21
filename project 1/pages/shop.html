@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore traditional devotional malas and handcrafted collections at Sabari Craft.">
+  <title>Shop All Malas | Sabari Craft</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="overflow-x-hidden bg-[#FAF7F0] pt-[72px] text-[#33251D]">
+
+  <!-- Shared Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Page Banner -->
+  <section class="overflow-hidden border-b border-[#E8DCC8] bg-[#F0E5D3]">
+    <div class="mx-auto grid max-w-7xl items-center gap-6 px-4 py-8 sm:gap-8 sm:px-6 sm:py-12 md:grid-cols-2 md:py-16 lg:gap-10 lg:px-8 2xl:gap-14">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[#A46F2D]">
+          Explore Our Collection
+        </p>
+
+        <h1 class="mt-3 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl">Shop All Malas</h1>
+
+        <p class="mt-4 max-w-xl text-sm leading-6 text-[#75675B] sm:text-base sm:leading-7">
+          Explore traditional devotional malas, discover different designs
+          and learn about the traditions behind each collection.
+        </p>
+
+        <div class="mt-6 flex flex-wrap gap-2 text-xs sm:gap-3 sm:text-sm">
+          <span class="rounded-full bg-white px-4 py-2 shadow-sm">15 Products</span>
+          <span class="rounded-full bg-white px-4 py-2 shadow-sm">Multiple Designs</span>
+          <span class="rounded-full bg-white px-4 py-2 shadow-sm">Personal Enquiries</span>
+        </div>
+      </div>
+
+      <div class="relative hidden md:block md:mt-2 lg:mt-0">
+        <img
+          src="../imgs/shop-hero-malas.jpg"
+          alt="Collection of traditional devotional malas"
+          class="h-64 w-full rounded-2xl object-cover shadow-xl md:h-[320px] lg:h-[400px] xl:h-[440px] 2xl:h-[500px] 2xl:rounded-3xl"
+          loading="eager"
+        >
+        <div class="absolute inset-0 rounded-3xl ring-1 ring-[#C9A96E]/30"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Catalogue -->
+  <main id="catalogue" class="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 md:py-12 lg:px-8 lg:py-14 2xl:py-16">
+    <div class="grid min-w-0 grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-[220px_minmax(0,1fr)] xl:grid-cols-[240px_minmax(0,1fr)] 2xl:gap-10">
+
+      <!-- Filters -->
+      <aside class="h-fit rounded-2xl border border-[#E8DCC8] bg-white p-4 sm:p-5 lg:sticky lg:top-20">
+        <h2 class="text-lg font-bold">Filter Products</h2>
+
+        <label for="search" class="mt-5 block text-sm font-semibold">
+          Search Products
+        </label>
+
+        <input
+          id="search"
+          type="search"
+          placeholder="Search mala..."
+          aria-label="Search malas"
+          class="mt-2 w-full rounded-xl border border-[#E5D8C5] bg-[#FAF7F0] px-3 py-3 text-sm outline-none focus:border-[#A46F2D]"
+        >
+
+        <h3 class="mt-6 font-semibold">Categories</h3>
+
+        <div id="categoryList" class="mt-3 space-y-3 text-sm">
+          <label class="flex cursor-pointer items-center gap-2">
+            <input type="radio" name="category" value="All" checked class="accent-[#78452B]">
+            All Products
+          </label>
+
+          <label class="flex cursor-pointer items-center gap-2">
+            <input type="radio" name="category" value="Traditional" class="accent-[#78452B]">
+            Traditional Malas
+          </label>
+
+          <label class="flex cursor-pointer items-center gap-2">
+            <input type="radio" name="category" value="Decorative" class="accent-[#78452B]">
+            Decorative Malas
+          </label>
+
+          <label class="flex cursor-pointer items-center gap-2">
+            <input type="radio" name="category" value="Prayer Beads" class="accent-[#78452B]">
+            Prayer Beads
+          </label>
+        </div>
+
+        <label for="sort" class="mt-6 block font-semibold">Sort By</label>
+
+        <select
+          id="sort"
+          class="mt-2 w-full rounded-xl border border-[#E5D8C5] bg-white px-3 py-3 text-sm"
+        >
+          <option value="default">Featured</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+          <option value="name">Name: A to Z</option>
+        </select>
+
+        <button
+          id="reset"
+          type="button"
+          class="mt-5 w-full rounded-xl border border-[#D7C5AD] px-4 py-3 text-sm font-semibold transition hover:bg-[#FAF7F0]"
+        >
+          Clear Filters
+        </button>
+      </aside>
+
+      <!-- Products -->
+      <section>
+        <h2 class="text-2xl font-bold">Our Collection</h2>
+        <p id="count" class="mt-1 text-sm text-[#75675B]" aria-live="polite"></p>
+
+        <div
+          id="products"
+          class="mt-5 grid grid-cols-1 gap-4 sm:mt-6 sm:grid-cols-2 sm:gap-5 xl:grid-cols-3 2xl:gap-6"
+        ></div>
+
+        <p id="empty" class="hidden py-16 text-center text-[#75675B]">
+          No matching products found. Try another search or category.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Story Section -->
+  <section class="bg-[#EEE2CF] py-14">
+    <div class="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 md:grid-cols-2 md:gap-10 lg:px-8 2xl:gap-14">
+
+      <div class="relative overflow-hidden rounded-3xl shadow-xl">
+        <img
+          src="../imgs/stories-section-banner.jpg"
+          alt="Traditional malas in a devotional setting"
+          class="h-56 w-full object-cover sm:h-72 md:h-[320px] lg:h-[380px] 2xl:h-[440px]"
+          loading="lazy"
+        >
+        <div class="absolute inset-0 bg-gradient-to-t from-[#33251D]/40 to-transparent"></div>
+      </div>
+
+      <div>
+        <p class="text-sm font-bold uppercase tracking-widest text-[#A46F2D]">
+          Tradition and Craftsmanship
+        </p>
+
+        <h2 class="mt-3 text-2xl font-bold sm:text-3xl lg:text-4xl">
+          Every Collection Has a Story
+        </h2>
+
+        <p class="mt-4 leading-7 text-[#75675B]">
+          Explore product materials, design details and traditional significance
+          behind each mala in our collection.
+        </p>
+
+        <a
+          href="stories.html"
+          class="mt-6 inline-flex items-center gap-2 rounded-full bg-[#78452B] px-6 py-3 font-semibold text-white transition hover:bg-[#5F3522]"
+        >
+          Explore Our Stories &rarr;
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Shared Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    // Use a Unicode escape to display the rupee symbol correctly.
+    const RUPEE = "\u20B9";
+
+    // Product images are stored in imgs/products1/.
+    // Prices and varieties are sample values; update them as needed.
+    const products = [
+      {
+        id: "SC001",
+        name: "Amethyst Mala",
+        category: "Decorative",
+        price: 300,
+        image: "../imgs/products1/amethyst-mala.jpg",
+        varieties: ["108 Beads", "54 Beads"]
+      },
+      {
+        id: "SC002",
+        name: "Black Bead Mala",
+        category: "Traditional",
+        price: 200,
+        image: "../imgs/products1/black-bead-mala.jpg",
+        varieties: ["108 Beads", "54 Beads"]
+      },
+      {
+        id: "SC003",
+        name: "Black and Gold Pendant Mala",
+        category: "Decorative",
+        price: 350,
+        image: "../imgs/products1/black-gold-pendant-mala.jpg",
+        varieties: ["108 Beads", "54 Beads"]
+      },
+      {
+        id: "SC004",
+        name: "Black Om Mala",
+        category: "Prayer Beads",
+        price: 250,
+        image: "../imgs/products1/black-om-mala.jpg",
+        varieties: ["108 Beads", "54 Beads"]
+      },
+      {
+        id: "SC005",
+        name: "Brown Wood Mala",
+        category: "Traditional",
+        price: 180,
+        image: "../imgs/products1/brown-wood-mala.jpg",
+        varieties: ["108 Beads", "54 Beads"]
+      },
+      {
+        id: "SC006",
+        name: "Clear Crystal Mala",
+        category: "Decorative",
+        price: 300,
+        image: "../imgs/products1/clear-crystal-mala.jpg",
+        varieties: ["108 Beads", "54 Beads"]
+      },
+      {
+        id: "SC007",
+        name: "Green Bead Mala",
+        category: "Decorative",
+        price: 250,
+        image: "../imgs/products1/green-bead-mala.jpg",
+        varieties: ["108 Beads", "54 Beads"]
+      },
+      {
+        id: "SC008",
+        name: "Multicolor Chakra Mala",
+        category: "Prayer Beads",
+        price: 350,
+        image: "../imgs/products1/multicolor-chakra-mala.jpg",
+        varieties: ["108 Beads", "54 Beads"]
+      },
+      {
+        id: "SC009",
+        name: "Natural Sandalwood Mala",
+        category: "Traditional",
+        price: 250,
+        image: "../imgs/products1/natural-sandalwood-mala.jpg",
+        varieties: ["108 Beads", "54 Beads"]
+      },
+      {
+        id: "SC010",
+        name: "Red Bead Mala",
+        category: "Decorative",
+        price: 200,
+        image: "../imgs/products1/red-bead-mala.jpg",
+        varieties: ["108 Beads", "54 Beads"]
+      },
+      {
+        id: "SC011",
+        name: "Rose Quartz Mala",
+        category: "Decorative",
+        price: 300,
+        image: "../imgs/products1/rose-quartz-mala.jpg",
+        varieties: ["108 Beads", "54 Beads"]
+      },
+      {
+        id: "SC012",
+        name: "Rudraksha Mala",
+        category: "Traditional",
+        price: 250,
+        image: "../imgs/products1/rudraksha-mala.jpg",
+        varieties: ["108 Beads", "54 Beads"]
+      },
+      {
+        id: "SC013",
+        name: "Rudraksha Pendant Mala",
+        category: "Prayer Beads",
+        price: 350,
+        image: "../imgs/products1/rudraksha-pendant-mala.jpg",
+        varieties: ["108 Beads", "54 Beads"]
+      },
+      {
+        id: "SC014",
+        name: "Sandalwood Mala",
+        category: "Traditional",
+        price: 220,
+        image: "../imgs/products1/sandalwood-mala.jpg",
+        varieties: ["108 Beads", "54 Beads"]
+      },
+      {
+        id: "SC015",
+        name: "White Stone Mala",
+        category: "Decorative",
+        price: 250,
+        image: "../imgs/products1/white-stone-mala.jpg",
+        varieties: ["108 Beads", "54 Beads"]
+      }
+    ];
+
+    // WhatsApp number: India country code + your phone number.
+    // Format: country code followed by number, with no spaces or + sign.
+    const WHATSAPP_NUMBER = "918825415354";
+
+    const productsEl = document.getElementById("products");
+    const searchEl = document.getElementById("search");
+    const sortEl = document.getElementById("sort");
+    const countEl = document.getElementById("count");
+    const emptyEl = document.getElementById("empty");
+    const categoryList = document.getElementById("categoryList");
+    const resetButton = document.getElementById("reset");
+
+    let activeCategory = "All";
+
+    // Render the products using the selected filters.
+    function renderProducts() {
+      const query = searchEl.value.trim().toLowerCase();
+
+      let results = products.filter(product => {
+        const matchesCategory =
+          activeCategory === "All" ||
+          product.category === activeCategory;
+
+        const searchableText = [
+          product.id,
+          product.name,
+          product.category,
+          ...product.varieties
+        ].join(" ").toLowerCase();
+
+        return matchesCategory && searchableText.includes(query);
+      });
+
+      if (sortEl.value === "low") {
+        results.sort((a, b) => a.price - b.price);
+      } else if (sortEl.value === "high") {
+        results.sort((a, b) => b.price - a.price);
+      } else if (sortEl.value === "name") {
+        results.sort((a, b) => a.name.localeCompare(b.name));
+      }
+
+      countEl.textContent =
+        `${results.length} product${results.length === 1 ? "" : "s"} found`;
+
+      emptyEl.classList.toggle("hidden", results.length > 0);
+
+      productsEl.innerHTML = results.map(product => `
+        <article class="min-w-0 overflow-hidden rounded-2xl border border-[#E8DCC8] bg-white transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+          <div class="relative h-52 overflow-hidden bg-white p-3 sm:h-56 md:h-60 lg:h-56 xl:h-60 2xl:h-72">
+            <img
+              src="${product.image}"
+              alt="${product.name}"
+              class="h-full w-full rounded-xl object-contain"
+              loading="lazy"
+              onerror="this.onerror=null; this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');"
+            >
+
+            <div class="hidden h-full items-center justify-center rounded-xl bg-[#F0E5D3] p-4 text-center text-sm text-[#8B735D]">
+              Image unavailable: ${product.name}
+            </div>
+          </div>
+
+          <div class="p-4 sm:p-5 lg:p-4 xl:p-5 2xl:p-6">
+            <p class="text-xs font-semibold uppercase tracking-widest text-[#A46F2D]">
+              ${product.category}
+            </p>
+
+            <h3 class="mt-2 break-words text-base font-bold sm:text-lg 2xl:text-xl">${product.name}</h3>
+
+            <p class="mt-2 text-sm text-[#75675B]">
+              Product code: ${product.id}
+            </p>
+
+            <p class="mt-3 text-lg font-bold text-[#78452B] sm:text-xl">
+              ${RUPEE}${product.price.toLocaleString("en-IN")}
+            </p>
+
+            <label
+              for="variety-${product.id}"
+              class="mt-4 block text-sm font-medium"
+            >
+              Select Variety
+            </label>
+
+            <select
+              id="variety-${product.id}"
+              class="mt-2 w-full min-w-0 rounded-lg border border-[#E5D8C5] bg-[#FAF7F0] px-3 py-3 text-sm"
+            >
+              ${product.varieties.map(variety =>
+                `<option value="${variety}">${variety}</option>`
+              ).join("")}
+            </select>
+
+            <button
+              type="button"
+              data-order="${product.id}"
+              class="mt-4 w-full rounded-xl bg-[#78452B] px-3 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#5F3522] focus:outline-none focus:ring-2 focus:ring-[#A46F2D] focus:ring-offset-2 sm:px-4 sm:text-base"
+            >
+              Enquire on WhatsApp
+            </button>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    // Category filter.
+    categoryList.addEventListener("change", event => {
+      if (event.target.name === "category") {
+        activeCategory = event.target.value;
+        renderProducts();
+      }
+    });
+
+    // Search and sorting.
+    searchEl.addEventListener("input", renderProducts);
+    sortEl.addEventListener("change", renderProducts);
+
+    // Clear filters.
+    resetButton.addEventListener("click", () => {
+      searchEl.value = "";
+      sortEl.value = "default";
+      activeCategory = "All";
+
+      document.querySelector(
+        'input[name="category"][value="All"]'
+      ).checked = true;
+
+      renderProducts();
+    });
+
+    // Share the actual product image with the enquiry text where supported.
+    // Web Share opens the device share sheet; the customer chooses WhatsApp and the chat.
+    productsEl.addEventListener("click", async event => {
+      const button = event.target.closest("[data-order]");
+      if (!button) return;
+
+      const product = products.find(item => item.id === button.dataset.order);
+      if (!product) return;
+
+      const varietySelect = document.getElementById(`variety-${product.id}`);
+      const selectedVariety = varietySelect.value;
+      const productImageURL = new URL(product.image, window.location.href).href;
+
+      const message = [
+        "Hello Sabari Craft!",
+        "I would like to enquire about this product:",
+        `Product: ${product.name}`,
+        `Product code: ${product.id}`,
+        `Variety: ${selectedVariety}`,
+        `Listed price: ${RUPEE}${product.price.toLocaleString("en-IN")}`,
+        "Please confirm availability and final price."
+      ].join("\n");
+
+      if (!/^91\d{10}$/.test(WHATSAPP_NUMBER)) {
+        alert("Please check the WhatsApp number in shop.html.");
+        return;
+      }
+
+      const whatsappURL = "https://wa.me/" + WHATSAPP_NUMBER +
+        "?text=" + encodeURIComponent(message + `\nProduct image: ${productImageURL}`);
+
+      // File sharing requires HTTPS (Vercel provides this) and browser support.
+      if (navigator.share && navigator.canShare) {
+        try {
+          const response = await fetch(productImageURL);
+          if (!response.ok) throw new Error("Could not load the product image.");
+
+          const imageBlob = await response.blob();
+          const extension = imageBlob.type.includes("png") ? "png" :
+            imageBlob.type.includes("webp") ? "webp" : "jpg";
+          const imageFile = new File(
+            [imageBlob],
+            `${product.id}-${product.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}.${extension}`,
+            { type: imageBlob.type || "image/jpeg" }
+          );
+
+          const shareData = {
+            title: `${product.name} - Sabari Craft`,
+            text: message,
+            files: [imageFile]
+          };
+
+          if (navigator.canShare({ files: [imageFile] })) {
+            await navigator.share(shareData);
+            return;
+          }
+        } catch (error) {
+          // If the visitor cancels the share sheet, do not open another window.
+          if (error && error.name === "AbortError") return;
+          console.warn("Image sharing is unavailable; opening text enquiry instead.", error);
+        }
+      }
+
+      // Fallback: prefill WhatsApp text. The image is a public URL, not an attachment.
+      window.open(whatsappURL, "_blank", "noopener,noreferrer");
+      alert("Your WhatsApp enquiry is ready. If the product photo is not attached, please attach it manually.");
+    });
+
+    // Initial product display.
+    renderProducts();
+  </script>
+
+  <!-- Load Shared Navbar and Footer -->
+  <script src="component-loader.js"></script>
+
+</body>
+</html>

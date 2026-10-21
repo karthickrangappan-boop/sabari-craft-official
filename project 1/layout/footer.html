@@ -1,0 +1,211 @@
+<!-- footer.html -->
+<footer class="bg-[#3B2418] py-10 text-white">
+  <div
+    class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-5
+           sm:grid-cols-2 lg:grid-cols-4"
+  >
+
+    <!-- Brand -->
+    <div>
+      <a
+        href="home.html#home"
+        class="group inline-block rounded-xl bg-white p-2 shadow-sm
+               transition-all duration-300 ease-out
+               hover:-translate-y-1 hover:shadow-lg"
+        aria-label="Sabari Craft Home"
+      >
+        <img
+          src="../imgs/logo/Sabari Craft Logo.png"
+          alt="Sabari Craft Logo"
+          class="h-12 w-auto object-contain
+                 transition-transform duration-300 ease-out
+                 group-hover:scale-105"
+        >
+      </a>
+
+      <p class="mt-4 max-w-xs text-sm leading-6 text-[#E8DCC8]">
+        Devotion, tradition and craftsmanship.
+        Discover handmade malas created with care and devotion.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 class="mb-4 text-lg font-semibold text-[#D9B477]">
+        Quick Links
+      </h3>
+
+      <ul class="space-y-3 text-sm text-white/85">
+
+        <li>
+          <a
+            href="home.html#home"
+            class="inline-block transition-all duration-300 ease-out
+                   hover:translate-x-1 hover:text-[#D9B477]"
+          >
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="shop.html"
+            class="inline-block transition-all duration-300 ease-out
+                   hover:translate-x-1 hover:text-[#D9B477]"
+          >
+            Shop All Malas
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="stories.html"
+            class="inline-block transition-all duration-300 ease-out
+                   hover:translate-x-1 hover:text-[#D9B477]"
+          >
+            Mala Stories
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="about.html"
+            class="inline-block transition-all duration-300 ease-out
+                   hover:translate-x-1 hover:text-[#D9B477]"
+          >
+            About Us
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="home.html#contact"
+            class="inline-block transition-all duration-300 ease-out
+                   hover:translate-x-1 hover:text-[#D9B477]"
+          >
+            Contact Us
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- Contact Details -->
+    <div>
+      <h3 class="mb-4 text-lg font-semibold text-[#D9B477]">
+        Contact Us
+      </h3>
+
+      <div class="space-y-4 text-sm text-white/85">
+
+        <!-- Phone Number -->
+        <div>
+          <p class="mb-1 font-medium text-white">
+            Phone Number
+          </p>
+
+          <a
+            href="tel:+918825425354"
+            class="inline-block transition-all duration-300 ease-out
+                   hover:translate-x-1 hover:text-[#D9B477]"
+          >
+            +91 88254 25354
+          </a>
+        </div>
+
+        <!-- WhatsApp -->
+        <div>
+          <p class="mb-1 font-medium text-white">
+            WhatsApp
+          </p>
+
+          <a
+            href="https://wa.me/918825425354"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2
+                   transition-all duration-300 ease-out
+                   hover:translate-x-1 hover:text-[#D9B477]"
+          >
+            <span>Chat with us on WhatsApp</span>
+            <span
+              aria-hidden="true"
+              class="transition-transform duration-300
+                     group-hover:translate-x-1"
+            >
+              ↗
+            </span>
+          </a>
+
+          <p class="mt-1 text-xs text-[#E8DCC8]/75">
+            Enquire about products and varieties.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Brand Message -->
+    <div>
+      <h3 class="mb-4 text-lg font-semibold text-[#D9B477]">
+        Sabari Craft
+      </h3>
+
+      <p class="text-sm leading-6 text-white/85">
+        Tradition in every bead. Find your preferred mala and contact us
+        for product details and enquiries.
+      </p>
+
+      <a
+        href="shop.html"
+        class="mt-5 inline-flex items-center justify-center
+               rounded-lg bg-[#D9B477] px-5 py-3
+               text-sm font-semibold text-[#3B2418]
+               shadow-md
+               transition-all duration-300 ease-out
+               hover:-translate-y-1 hover:bg-[#E8DCC8]
+               hover:shadow-xl
+               active:translate-y-0"
+      >
+        Explore Our Collection
+        <span
+          aria-hidden="true"
+          class="ml-2 inline-block transition-transform duration-300
+                 group-hover:translate-x-1"
+        >
+          →
+        </span>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Bottom Copyright -->
+  <div
+    class="mx-auto mt-10 max-w-7xl border-t border-white/15
+           px-5 pt-5"
+  >
+    <div
+      class="flex flex-col gap-3 text-center text-xs text-white/65
+             sm:flex-row sm:items-center sm:justify-between sm:text-left"
+    >
+      <p>
+        © <span id="footerYear"></span> Sabari Craft.
+        All rights reserved.
+      </p>
+
+      <p class="transition-colors duration-300 hover:text-[#D9B477]">
+        Tradition in Every Bead.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Current Year -->
+<script>
+  const footerYear = document.getElementById("footerYear");
+
+  if (footerYear) {
+    footerYear.textContent = new Date().getFullYear();
+  }
+</script>

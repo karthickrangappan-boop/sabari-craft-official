@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover the traditions and devotional stories associated with malas at Sabari Craft.">
+  <title>Our Stories | Sabari Craft</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+    h1, h2, h3, .font-serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    #storyModal .overflow-y-auto::-webkit-scrollbar {
+      width: 6px;
+    }
+    #storyModal .overflow-y-auto::-webkit-scrollbar-track {
+      background: transparent;
+      margin: 16px 0;
+    }
+    #storyModal .overflow-y-auto::-webkit-scrollbar-thumb {
+      background: #D7C5AD;
+      border-radius: 9999px;
+    }
+    #storyModal .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+      background: #A46F2D;
+    }
+    #storyModal .overflow-y-auto {
+      scrollbar-width: thin;
+      scrollbar-color: #D7C5AD transparent;
+    }
+  </style>
+</head>
+
+<body class="bg-[#FAF7F0] text-[#33251D] pt-[72px] antialiased">
+
+  <!-- Reusable Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="border-b border-[#E8DCC8] bg-[#F0E5D3]">
+      <div class="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 md:grid-cols-2 md:py-20">
+
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[0.22em] text-[#A46F2D]">
+            Faith &bull; Culture &bull; Tradition
+          </p>
+
+          <h1 class="mt-4 text-4xl font-bold leading-tight sm:text-5xl">
+            Every Mala Has a
+            <span class="text-[#A46F2D]">Story to Tell.</span>
+          </h1>
+
+          <p class="mt-5 max-w-xl leading-7 text-[#75675B]">
+            Explore the traditions, devotional practices and cultural
+            stories associated with different malas. Learn about the
+            meanings passed down through generations.
+          </p>
+
+          <a
+            href="#stories"
+            class="mt-7 inline-block rounded-full bg-[#78452B] px-7 py-3.5 font-semibold text-white shadow-md transition duration-300 hover:bg-[#5F3522] hover:shadow-lg"
+          >
+            Discover Stories &darr;
+          </a>
+        </div>
+
+        <div class="overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
+          <img
+            src="../imgs/Devotional Malas on a Golden Altar.png"
+            alt="Devotional malas and traditional prayer beads on a golden altar"
+            class="h-[300px] w-full object-cover transition duration-700 hover:scale-105 sm:h-[390px]"
+          >
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="mx-auto max-w-4xl px-5 py-14 text-center">
+
+      <p class="text-sm font-bold uppercase tracking-widest text-[#A46F2D]">
+        Discover the meaning
+      </p>
+
+      <h2 class="mt-3 text-3xl font-bold sm:text-4xl">
+        Traditions Behind the Beads
+      </h2>
+
+      <p class="mt-5 leading-7 text-[#75675B]">
+        Across Hindu devotional traditions, different beads and malas
+        are associated with particular deities, prayers and spiritual
+        practices. Their meanings can vary across communities and
+        traditions. Explore each story with respect and curiosity.
+      </p>
+
+    </section>
+
+    <!-- Stories Collection -->
+    <section id="stories" class="border-t border-[#E8DCC8] bg-white py-14 sm:py-16">
+      <div class="mx-auto max-w-7xl px-5">
+
+        <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+
+          <div>
+            <p class="text-sm font-bold uppercase tracking-widest text-[#A46F2D]">
+              Our story collection
+            </p>
+
+            <h2 class="mt-3 text-3xl font-bold sm:text-4xl">
+              Explore Our Stories
+            </h2>
+
+            <p class="mt-3 text-[#75675B]">
+              Discover devotional traditions, one sacred story at a time.
+            </p>
+          </div>
+
+          <!-- Search -->
+          <div class="relative w-full md:max-w-xs">
+            <input
+              id="search"
+              type="search"
+              placeholder="Search stories, beads, traditions..."
+              aria-label="Search stories"
+              class="w-full rounded-full border border-[#E5D8C5] bg-[#FAF7F0] px-5 py-3 pr-10 text-sm outline-none transition focus:border-[#A46F2D] focus:ring-2 focus:ring-[#A46F2D]/20"
+            >
+            <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#A46F2D]">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Category Filters -->
+        <div id="filters" class="mt-7 flex flex-wrap gap-2.5 sm:gap-3">
+
+          <button
+            type="button"
+            data-filter="All"
+            aria-pressed="true"
+            class="rounded-full bg-[#78452B] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#5F3522]"
+          >
+            All Stories
+          </button>
+
+          <button
+            type="button"
+            data-filter="Ayyappa"
+            aria-pressed="false"
+            class="rounded-full border border-[#E5D8C5] bg-[#FAF7F0] px-5 py-2.5 text-sm font-medium transition hover:border-[#A46F2D] hover:bg-white"
+          >
+            Ayyappa
+          </button>
+
+          <button
+            type="button"
+            data-filter="Shiva"
+            aria-pressed="false"
+            class="rounded-full border border-[#E5D8C5] bg-[#FAF7F0] px-5 py-2.5 text-sm font-medium transition hover:border-[#A46F2D] hover:bg-white"
+          >
+            Shiva
+          </button>
+
+          <button
+            type="button"
+            data-filter="Vishnu"
+            aria-pressed="false"
+            class="rounded-full border border-[#E5D8C5] bg-[#FAF7F0] px-5 py-2.5 text-sm font-medium transition hover:border-[#A46F2D] hover:bg-white"
+          >
+            Vishnu
+          </button>
+
+          <button
+            type="button"
+            data-filter="Traditions"
+            aria-pressed="false"
+            class="rounded-full border border-[#E5D8C5] bg-[#FAF7F0] px-5 py-2.5 text-sm font-medium transition hover:border-[#A46F2D] hover:bg-white"
+          >
+            Traditions
+          </button>
+
+        </div>
+
+        <!-- Story Count -->
+        <p
+          id="count"
+          class="mt-6 text-sm font-medium text-[#75675B]"
+          aria-live="polite"
+        ></p>
+
+        <!-- Story Cards Grid -->
+        <div
+          id="storyGrid"
+          class="mt-6 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3"
+        ></div>
+
+        <!-- Empty Message -->
+        <div
+          id="empty"
+          class="hidden py-16 text-center"
+        >
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#F3EAD9] text-2xl text-[#78452B]">
+            🪔
+          </div>
+          <h3 class="mt-4 text-xl font-bold text-[#33251D]">No stories found</h3>
+          <p class="mt-2 text-[#75675B]">Try adjusting your search query or switching categories.</p>
+          <button
+            id="resetFilterBtn"
+            type="button"
+            class="mt-5 rounded-full bg-[#78452B] px-6 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-[#5F3522]"
+          >
+            Reset All Filters
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Respectful Storytelling -->
+    <section class="py-14">
+      <div class="mx-auto max-w-5xl px-5">
+
+        <div class="rounded-3xl border border-[#E8DCC8] bg-[#F0E5D3] p-7 shadow-sm sm:p-10">
+
+          <p class="text-sm font-bold uppercase tracking-widest text-[#A46F2D]">
+            Our commitment
+          </p>
+
+          <h2 class="mt-3 text-2xl font-bold sm:text-3xl">
+            Stories Shared with Respect
+          </h2>
+
+          <p class="mt-4 leading-7 text-[#75675B]">
+            Sabari Craft aims to present devotional stories accurately,
+            distinguish regional traditions from widely shared beliefs,
+            and respect the many ways people practise their faith.
+          </p>
+
+          <p class="mt-3 leading-7 text-[#75675B]">
+            Traditional spiritual benefits are presented as beliefs
+            within their respective traditions, not as guaranteed
+            medical or material outcomes.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-[#78452B] py-16 text-center text-white">
+      <div class="mx-auto max-w-3xl px-5">
+
+        <h2 class="text-3xl font-bold sm:text-4xl">
+          Discover Your Next Sacred Mala
+        </h2>
+
+        <p class="mt-4 leading-7 text-white/85">
+          Explore our collection of authentic, handcrafted traditional and devotional malas.
+        </p>
+
+        <a
+          href="shop.html"
+          class="mt-8 inline-block rounded-full bg-white px-8 py-3.5 font-semibold text-[#78452B] shadow-lg transition duration-300 hover:bg-[#F0E5D3] hover:shadow-xl"
+        >
+          Browse Our Collection &rarr;
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Story Detail Modal -->
+  <div
+    id="storyModal"
+    class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 p-4 sm:p-6 backdrop-blur-sm transition-opacity duration-300"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+    aria-hidden="true"
+  >
+
+    <div class="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-white p-6 shadow-2xl sm:p-8">
+
+      <!-- Modal Header -->
+      <div class="flex items-start justify-between gap-4">
+
+        <div>
+          <span
+            id="modalCategory"
+            class="inline-block rounded-full bg-[#F3EAD9] px-3.5 py-1 text-xs font-bold uppercase tracking-widest text-[#78452B]"
+          ></span>
+
+          <h2 id="modalTitle" class="mt-2 text-2xl font-bold text-[#33251D] sm:text-3xl"></h2>
+          <p id="modalSubtitle" class="mt-1 text-sm text-[#8B735D] italic"></p>
+        </div>
+
+        <button
+          id="closeModal"
+          type="button"
+          class="flex h-10 w-10 items-center justify-center rounded-full border border-[#E5D8C5] bg-[#FAF7F0] text-xl font-bold text-[#75675B] transition hover:bg-[#E8DCC8] hover:text-[#33251D] focus:outline-none"
+          aria-label="Close story"
+        >
+          &times;
+        </button>
+
+      </div>
+
+      <!-- Modal Image -->
+      <div class="mt-5 overflow-hidden rounded-2xl bg-[#F0E5D3] shadow-md ring-1 ring-black/5">
+        <img
+          id="modalImage"
+          src=""
+          alt=""
+          class="h-56 w-full object-cover sm:h-72"
+        >
+      </div>
+
+      <!-- Modal Body -->
+      <div
+        id="modalBody"
+        class="mt-6 space-y-4 text-base leading-7 text-[#57483C]"
+      ></div>
+
+      <!-- Modal Footer -->
+      <div class="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-[#E8DCC8] pt-5">
+        <span class="text-xs font-bold uppercase tracking-wider text-[#A46F2D]">
+          Sabari Craft &bull; Sacred Heritage
+        </span>
+        <a
+          href="shop.html"
+          class="inline-flex items-center gap-2 rounded-full bg-[#78452B] px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-[#5F3522] hover:shadow"
+        >
+          Explore Malas &rarr;
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Reusable Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Stories JavaScript -->
+  <script>
+    const stories = [
+      {
+        id: 1,
+        title: "The Tradition of Sabarimala",
+        category: "Ayyappa",
+        subtitle: "Devotion, discipline and holy pilgrimage",
+        image: "../imgs/sabari-rudraksha-mala.png",
+        excerpt:
+          "Learn about Lord Ayyappa and the devotional traditions associated with the sacred Sabarimala pilgrimage.",
+        body:
+          "Sabarimala is an important pilgrimage destination dedicated to Lord Ayyappa in Kerala, nestled among the 18 sacred hills of the Western Ghats. Devotees traditionally observe a rigorous 41-day period of spiritual preparation known as the 'Mandala Vratham'.\n\nDuring this holy period, pilgrims wear humble black, blue, or saffron clothing, observe celibacy, follow a pure sattvic vegetarian lifestyle, and step away from worldly luxuries. Wearing the sacred Rudraksha or Tulasi mala, placed around the neck by an experienced Guru Swami or elder in a temple ceremony, marks the devotee's formal initiation into the pilgrimage vow.\n\nThe spiritual journey culminates in climbing the sacred Pathinettam Padi (the 18 holy golden steps) barefoot, carrying the revered 'Irumudi Kettu'—the sacred two-compartment bag carrying ghee-filled coconuts for the Abhishekam of Lord Ayyappa, representing complete surrender of ego to the divine."
+      },
+      {
+        id: 2,
+        title: "Rudraksha and Lord Shiva",
+        category: "Shiva",
+        subtitle: "A sacred devotional association born from divine tears",
+        image: "../imgs/shiva-rudraksha-story.jpg",
+        excerpt:
+          "Discover the ancient sacred bond between Rudraksha beads and Lord Shiva in Shaiva traditions.",
+        body:
+          "The word 'Rudraksha' originates from the Sanskrit terms 'Rudra' (a Vedic name for Lord Shiva) and 'Aksha' (meaning tears or eyes). According to timeless Puranic tradition, after contemplating the cosmic welfare of all living beings in profound meditation for centuries, Lord Shiva opened his eyes of compassion, and tears of grace touched the earth, giving birth to the sacred Rudraksha tree (Elaeocarpus ganitrus).\n\nRudraksha beads hold a revered place in Shaiva devotional practice, yoga, and meditation. Devotees wear them close to the heart or use them for Japa (sacred mantra repetition) to foster mental tranquility, shield the aura from negative influences, and maintain a constant contemplative connection with Shiva.\n\nBeads are classified by their natural longitudinal facets called 'Mukhis'. From the rare Ek Mukhi (single-faced) to the universally beloved Panchamukhi (five-faced representing the five aspects of Shiva), each bead carries rich symbolism. Beyond religious meaning, wearing rudraksha serves as a daily tactile anchor for inner peace, self-discipline, and devotion."
+      },
+      {
+        id: 3,
+        title: "Tulasi in Vaishnava Tradition",
+        category: "Vishnu",
+        subtitle: "The divine sacred plant of devotion and pure surrender",
+        image: "../imgs/tulasi-vaishnava-story.jpg",
+        excerpt:
+          "Explore the profound reverence for Tulasi beads in traditions dedicated to Lord Vishnu and Krishna.",
+        body:
+          "In Vaishnava devotional tradition, Tulasi (Holy Basil) is revered not merely as a sacred botanical plant, but as Vrinda Devi—an eternal, supreme devotee and beloved consort of Lord Vishnu and Sri Krishna. Ancient texts recount that no prayer, offering, or Prasadam to Lord Krishna is complete without the auspicious presence of a fresh Tulasi leaf.\n\nMalas handcrafted from the dried stems of sacred Tulasi are treasured across Vaishnava communities, particularly in Gaudiya, Ramanuja, and Vallabha lineages. Devotees wear sacred Kanthi malas around the neck as a physical token of self-surrender to God, and hold Tulasi japa malas to softly chant the divine Maha-Mantra.\n\nThe natural herbal aroma of Tulasi wood is traditionally believed to soothe the nervous system, clear negative thoughts, and awaken heartfelt devotion, purity, and humble gratitude in everyday life."
+      },
+      {
+        id: 4,
+        title: "The Meaning of a Mala",
+        category: "Traditions",
+        subtitle: "Prayer, sacred geometry and mindful meditation",
+        image: "../imgs/meaning-of-mala-story.jpg",
+        excerpt:
+          "Learn how 108 prayer beads are used across devotional traditions to anchor the mind in meditation.",
+        body:
+          "A 'Mala' is a string of prayer beads used across Hindu, Buddhist, and yogic traditions for thousands of years. A full traditional mala consists of precisely 108 counter beads, plus a single focal bead known as the 'Guru Bead' or 'Meru'.\n\nThe number 108 holds profound cosmological and spiritual meaning across Vedic knowledge. Ancient astronomers observed that the average distance between the Sun and Earth is roughly 108 times the Sun's diameter, and the distance from Earth to the Moon is 108 times the Moon's diameter. In yogic anatomy, there are 108 major energy channels (nadis) meeting at the sacred Heart Chakra (Anahata).\n\nDuring Japa meditation, the mala serves as a tactile anchor for the wandering mind. One advances bead by bead using the thumb and middle finger with each repetition of a mantra. Upon reaching the Guru bead, tradition guides the practitioner to pause with gratitude and turn the mala around rather than crossing over it, symbolizing deep humility before divine wisdom."
+      },
+      {
+        id: 5,
+        title: "Materials and Craftsmanship",
+        category: "Traditions",
+        subtitle: "Natural beads, artisan knotting and timeless finishes",
+        image: "../imgs/mala-craftsmanship-story.jpg",
+        excerpt:
+          "Learn about authentic bead materials, hand-knotting techniques, and artisanal finishes that distinguish each mala.",
+        body:
+          "Every authentic devotional mala begins with natural, reverently harvested gifts of the earth—from organic Rudraksha seeds and fragrant Mysore Sandalwood (Chandan), to sacred Tulasi wood, polished Lotus seeds (Kamal Gatta), and natural cooling quartz crystals (Sphatik).\n\nThe true artistry of mala making resides in traditional hand-knotting. Experienced artisans thread each individual bead onto durable multi-ply cotton or pure silk cords, tying a deliberate knot between each bead. This intricate knotting prevents friction between neighboring beads, ensures consistent spacing for smooth finger movement during Japa, and keeps the beads securely intact should the cord ever wear out.\n\nEach mala is crowned by a hand-tied tassel, traditionally created in auspicious saffron, gold, or crimson silk. The tassel represents the thousand-petaled Sahasrara crown lotus, symbolizing the gathering and grounding of spiritual energy cultivated during daily practice."
+      },
+      {
+        id: 6,
+        title: "Preparing for a Pilgrimage",
+        category: "Ayyappa",
+        subtitle: "Customs, austerity and spiritual unity followed by devotees",
+        image: "../imgs/ayyappa-pilgrimage-story.jpg",
+        excerpt:
+          "Explore common customs of preparation, discipline and shared brotherhood in sacred pilgrimage traditions.",
+        body:
+          "Embarking upon a sacred pilgrimage like Sabarimala is fundamentally an inner journey of self-purification and spiritual awakening. During the holy Mandala season, all social, economic, and caste distinctions vanish: every pilgrim addresses one another simply as 'Swami' or 'Ayyappa', celebrating the core philosophical truth of Advaita—that the divine resides within all beings.\n\nPreparation involves a committed vow of simplicity, early morning and evening prayers, cold-water ablutions, chanting 'Swamiye Saranam Ayyappa', and abstaining from anger, ego, and worldly vanity. The sacred mala worn upon the chest remains an unbroken physical reminder of this sacred commitment.\n\nWhen departure day arrives, the pilgrim receives the blessed 'Irumudi Kettu' upon their head from the Guru Swami. Walking barefoot across rugged forest trails through dense hills, echoing with collective chants of devotion, the pilgrim arrives at the temple steps where worldly attachments dissolve in the darshan of the divine."
+      }
+    ];
+
+    // Select page elements.
+    const grid = document.getElementById("storyGrid");
+    const search = document.getElementById("search");
+    const count = document.getElementById("count");
+    const empty = document.getElementById("empty");
+    const filters = document.getElementById("filters");
+    const modal = document.getElementById("storyModal");
+    const closeModalButton = document.getElementById("closeModal");
+    const resetFilterBtn = document.getElementById("resetFilterBtn");
+
+    let activeFilter = "All";
+    let previouslyFocusedElement = null;
+
+    // Render story cards into the grid.
+    function renderStories() {
+      const query = search.value.trim().toLowerCase();
+
+      const filtered = stories.filter(story => {
+        const matchesCategory =
+          activeFilter === "All" ||
+          story.category === activeFilter;
+
+        const searchableText = [
+          story.title,
+          story.category,
+          story.subtitle,
+          story.excerpt,
+          story.body
+        ].join(" ").toLowerCase();
+
+        return matchesCategory && searchableText.includes(query);
+      });
+
+      count.textContent =
+        `${filtered.length} ${filtered.length === 1 ? "story" : "stories"} found`;
+
+      empty.classList.toggle("hidden", filtered.length > 0);
+
+      grid.innerHTML = filtered.map(story => `
+        <article
+          tabindex="0"
+          role="button"
+          aria-label="Read story: ${story.title}"
+          data-story="${story.id}"
+          class="group cursor-pointer overflow-hidden rounded-2xl border border-[#E8DCC8] bg-[#FAF7F0] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#A46F2D]/60 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#78452B]"
+        >
+          <!-- Card Image Container -->
+          <div class="relative flex h-52 items-center justify-center overflow-hidden bg-[#F0E5D3]">
+            <img
+              src="${story.image}"
+              alt="${story.title}"
+              loading="lazy"
+              onerror="this.parentElement.innerHTML='<div class=\\'flex h-full w-full items-center justify-center text-4xl text-[#78452B]\\'>🪔</div>'"
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            >
+            <span class="absolute top-3 left-3 rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#78452B] shadow-sm backdrop-blur-sm">
+              ${story.category}
+            </span>
+          </div>
+
+          <!-- Card Content -->
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-[#33251D] transition-colors duration-200 group-hover:text-[#78452B]">
+              ${story.title}
+            </h3>
+
+            <p class="mt-1 text-sm font-medium text-[#8B735D]">
+              ${story.subtitle}
+            </p>
+
+            <p class="mt-3.5 text-sm leading-6 text-[#75675B] line-clamp-3">
+              ${story.excerpt}
+            </p>
+
+            <div class="mt-5 flex items-center font-semibold text-[#78452B] transition-colors group-hover:text-[#A46F2D]">
+              <span class="underline underline-offset-4">Read Full Story</span>
+              <span class="ml-1.5 transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    // Open story detail modal
+    function openStory(storyId) {
+      const story = stories.find(item => item.id === Number(storyId));
+      if (!story) return;
+
+      document.getElementById("modalCategory").textContent = story.category;
+      document.getElementById("modalTitle").textContent = story.title;
+      document.getElementById("modalSubtitle").textContent = story.subtitle;
+
+      const modalImg = document.getElementById("modalImage");
+      if (modalImg) {
+        modalImg.src = story.image;
+        modalImg.alt = story.title;
+      }
+
+      const modalBody = document.getElementById("modalBody");
+      modalBody.innerHTML = story.body
+        .split("\n\n")
+        .map(paragraph => `<p class="leading-7">${paragraph.trim()}</p>`)
+        .join("");
+
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("overflow-hidden");
+
+      const modalCard = modal.querySelector(".overflow-y-auto");
+      if (modalCard) {
+        modalCard.scrollTop = 0;
+      }
+
+      closeModalButton.focus();
+    }
+
+    // Close the story popup.
+    function closeStory() {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("overflow-hidden");
+
+      if (previouslyFocusedElement) {
+        previouslyFocusedElement.focus();
+        previouslyFocusedElement = null;
+      }
+    }
+
+    // Reset filters and search.
+    function resetFilters() {
+      search.value = "";
+      activeFilter = "All";
+
+      filters.querySelectorAll("[data-filter]").forEach(item => {
+        const selected = item.dataset.filter === "All";
+        item.setAttribute("aria-pressed", String(selected));
+        item.className = selected
+          ? "rounded-full bg-[#78452B] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#5F3522]"
+          : "rounded-full border border-[#E5D8C5] bg-[#FAF7F0] px-5 py-2.5 text-sm font-medium transition hover:border-[#A46F2D] hover:bg-white";
+      });
+
+      renderStories();
+    }
+
+    // Filter stories by category.
+    filters.addEventListener("click", event => {
+      const button = event.target.closest("[data-filter]");
+      if (!button) return;
+
+      activeFilter = button.dataset.filter;
+
+      filters.querySelectorAll("[data-filter]").forEach(item => {
+        const selected = item === button;
+        item.setAttribute("aria-pressed", String(selected));
+        item.className = selected
+          ? "rounded-full bg-[#78452B] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#5F3522]"
+          : "rounded-full border border-[#E5D8C5] bg-[#FAF7F0] px-5 py-2.5 text-sm font-medium transition hover:border-[#A46F2D] hover:bg-white";
+      });
+
+      renderStories();
+    });
+
+    // Search stories with live input.
+    search.addEventListener("input", renderStories);
+
+    // Reset button in empty state.
+    if (resetFilterBtn) {
+      resetFilterBtn.addEventListener("click", resetFilters);
+    }
+
+    // Card click event (opens modal from anywhere on card).
+    grid.addEventListener("click", event => {
+      const card = event.target.closest("[data-story]");
+      if (!card) return;
+
+      previouslyFocusedElement = card;
+      openStory(card.dataset.story);
+    });
+
+    // Keyboard support for cards (Enter or Space opens modal).
+    grid.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        const card = event.target.closest("[data-story]");
+        if (card) {
+          event.preventDefault();
+          previouslyFocusedElement = card;
+          openStory(card.dataset.story);
+        }
+      }
+    });
+
+    // Close button click.
+    closeModalButton.addEventListener("click", closeStory);
+
+    // Close when clicking outside the modal content.
+    modal.addEventListener("click", event => {
+      if (event.target === modal) {
+        closeStory();
+      }
+    });
+
+    // Close with the Escape key.
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && !modal.classList.contains("hidden")) {
+        closeStory();
+      }
+    });
+
+    // Initial render.
+    renderStories();
+  </script>
+
+  <!-- Load shared navbar and footer -->
+  <script src="component-loader.js"></script>
+
+</body>
+</html>
