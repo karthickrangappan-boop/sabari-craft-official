@@ -22,9 +22,7 @@
           Explore Our Collection
         </p>
 
-        <h1 class="mt-3 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl">
-          Shop All Malas
-        </h1>
+        <h1 class="mt-3 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl">Shop All Malas</h1>
 
         <p class="mt-4 max-w-xl text-sm leading-6 text-[#75675B] sm:text-base sm:leading-7">
           Explore traditional devotional malas, discover different designs
@@ -168,6 +166,7 @@
           Explore Our Stories &rarr;
         </a>
       </div>
+
     </div>
   </section>
 
@@ -175,9 +174,11 @@
   <div id="footer-placeholder"></div>
 
   <script>
+    // Use a Unicode escape to display the rupee symbol correctly.
     const RUPEE = "\u20B9";
 
     // Product images are stored in imgs/products1/.
+    // Prices and varieties are sample values; update them as needed.
     const products = [
       {
         id: "SC001",
@@ -301,7 +302,8 @@
       }
     ];
 
-    // Country code +91 and the business mobile number.
+    // WhatsApp number: India country code + your phone number.
+    // Format: country code followed by number, with no spaces or + sign.
     const WHATSAPP_NUMBER = "918825415354";
 
     const productsEl = document.getElementById("products");
@@ -314,7 +316,7 @@
 
     let activeCategory = "All";
 
-    // Render product cards.
+    // Render the products using the selected filters.
     function renderProducts() {
       const query = searchEl.value.trim().toLowerCase();
 
@@ -368,9 +370,7 @@
               ${product.category}
             </p>
 
-            <h3 class="mt-2 break-words text-base font-bold sm:text-lg 2xl:text-xl">
-              ${product.name}
-            </h3>
+            <h3 class="mt-2 break-words text-base font-bold sm:text-lg 2xl:text-xl">${product.name}</h3>
 
             <p class="mt-2 text-sm text-[#75675B]">
               Product code: ${product.id}
@@ -433,29 +433,19 @@
       renderProducts();
     });
 
-    // Share the actual image file with the enquiry text where supported.
-    // The customer chooses WhatsApp and the destination chat.
+    // Share the actual product image with the enquiry text where supported.
+    // Web Share opens the device share sheet; the customer chooses WhatsApp and the chat.
     productsEl.addEventListener("click", async event => {
       const button = event.target.closest("[data-order]");
       if (!button) return;
 
-      const product = products.find(
-        item => item.id === button.dataset.order
-      );
+      const product = products.find(item => item.id === button.dataset.order);
       if (!product) return;
 
-      const varietySelect = document.getElementById(
-        `variety-${product.id}`
-      );
+      const varietySelect = document.getElementById(`variety-${product.id}`);
       const selectedVariety = varietySelect.value;
+      const productImageURL = new URL(product.image, window.location.href).href;
 
-      // Resolve the image path to fetch the actual image file.
-      const productImageURL = new URL(
-        product.image,
-        window.location.href
-      ).href;
-
-      // Do not put any image URL in the WhatsApp message.
       const message = [
         "Hello Sabari Craft!",
         "I would like to enquire about this product:",
@@ -471,72 +461,45 @@
         return;
       }
 
-      // Attempt to share the actual image file.
-      if (
-        navigator.share &&
-        navigator.canShare &&
-        typeof File !== "undefined"
-      ) {
+      const whatsappURL = "https://wa.me/" + WHATSAPP_NUMBER +
+        "?text=" + encodeURIComponent(message);
+
+      // File sharing requires HTTPS (Vercel provides this) and browser support.
+      if (navigator.share && navigator.canShare) {
         try {
           const response = await fetch(productImageURL);
-
-          if (!response.ok) {
-            throw new Error("Could not load the product image.");
-          }
+          if (!response.ok) throw new Error("Could not load the product image.");
 
           const imageBlob = await response.blob();
-          const mimeType = imageBlob.type || "image/jpeg";
-
-          const extension = mimeType.includes("png")
-            ? "png"
-            : mimeType.includes("webp")
-              ? "webp"
-              : "jpg";
-
-          const safeName = product.name
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, "-")
-            .replace(/^-|-$/g, "");
-
+          const extension = imageBlob.type.includes("png") ? "png" :
+            imageBlob.type.includes("webp") ? "webp" : "jpg";
           const imageFile = new File(
             [imageBlob],
-            `${product.id}-${safeName}.${extension}`,
-            { type: mimeType }
+            `${product.id}-${product.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}.${extension}`,
+            { type: imageBlob.type || "image/jpeg" }
           );
 
-          if (navigator.canShare({ files: [imageFile] })) {
-            await navigator.share({
-              title: `${product.name} - Sabari Craft`,
-              text: message,
-              files: [imageFile]
-            });
+          const shareData = {
+            title: `${product.name} - Sabari Craft`,
+            text: message,
+            files: [imageFile]
+          };
 
+          if (navigator.canShare({ files: [imageFile] })) {
+            await navigator.share(shareData);
             return;
           }
         } catch (error) {
-          // If the customer closes the share sheet, do not open another window.
-          if (error && error.name === "AbortError") {
-            return;
-          }
-
-          console.warn(
-            "Product image sharing is unavailable:",
-            error
-          );
+          // If the visitor cancels the share sheet, do not open another window.
+          if (error && error.name === "AbortError") return;
+          console.warn("Image sharing is unavailable; opening text enquiry instead.", error);
         }
       }
 
-      // Fallback: text-only WhatsApp link. Never include a local image URL.
-      const whatsappURL =
-        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-
+      // Fallback: open WhatsApp with enquiry text only, without a local image URL.
+      // A normal wa.me link cannot attach an image file automatically.
       window.open(whatsappURL, "_blank", "noopener,noreferrer");
-
-      alert(
-        "Your enquiry text is ready in WhatsApp. " +
-        "This browser cannot attach the product photo automatically. " +
-        "Please attach the product image manually before sending."
-      );
+      alert("Your enquiry text is ready in WhatsApp. This browser cannot attach the photo automatically. Please attach the product image manually before sending.");
     });
 
     // Initial product display.
