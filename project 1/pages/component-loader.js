@@ -14,21 +14,46 @@
       if (placeholderId === "navbar-placeholder") {
         const menuButton = placeholder.querySelector("#menuButton");
         const mobileMenu = placeholder.querySelector("#mobileMenu");
+        const menuButtonLabel = placeholder.querySelector("#menuButtonLabel");
+        const menuIcon = placeholder.querySelector("#menuIcon path");
 
-        if (menuButton && mobileMenu) {
+        if (menuButton && mobileMenu && menuButtonLabel && menuIcon) {
+          const setMenuOpen = isOpen => {
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuButton.setAttribute(
+              "aria-label",
+              isOpen ? "Close navigation menu" : "Open navigation menu"
+            );
+            menuButtonLabel.textContent = isOpen ? "Close" : "Menu";
+            menuIcon.setAttribute(
+              "d",
+              isOpen
+                ? "M6 6l12 12M18 6 6 18"
+                : "M4 6h16M4 12h16M4 18h16"
+            );
+            mobileMenu.classList.toggle("hidden", !isOpen);
+          };
+
           menuButton.addEventListener("click", () => {
-            const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-            menuButton.setAttribute("aria-expanded", String(!isOpen));
-            mobileMenu.classList.toggle("hidden", isOpen);
-            menuButton.textContent = isOpen ? "Menu" : "Close";
+            setMenuOpen(menuButton.getAttribute("aria-expanded") !== "true");
           });
 
           mobileMenu.querySelectorAll("a").forEach(link => {
-            link.addEventListener("click", () => {
-              mobileMenu.classList.add("hidden");
-              menuButton.setAttribute("aria-expanded", "false");
-              menuButton.textContent = "Menu";
-            });
+            link.addEventListener("click", () => setMenuOpen(false));
+          });
+
+          document.addEventListener("keydown", event => {
+            if (
+              event.key === "Escape" &&
+              menuButton.getAttribute("aria-expanded") === "true"
+            ) {
+              setMenuOpen(false);
+              menuButton.focus();
+            }
+          });
+
+          window.matchMedia("(min-width: 1024px)").addEventListener("change", event => {
+            if (event.matches) setMenuOpen(false);
           });
         }
 
@@ -52,8 +77,7 @@
             const linkPage = link.getAttribute("href").split("/").pop();
             if (linkPage === currentPage) {
               link.classList.add(
-                "text-[#78452B]", "font-bold",
-                "bg-[#F3EAD9]", "rounded-lg", "px-3", "py-1"
+                "text-[#78452B]", "font-bold", "bg-[#F3EAD9]", "rounded-lg"
               );
             }
           });

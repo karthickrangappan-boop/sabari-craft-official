@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../imgs/logo/icon%201.png">
   <meta name="description" content="Explore traditional devotional malas and handcrafted collections at Sabari Craft.">
   <title>Shop All Malas | Sabari Craft</title>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -120,7 +121,7 @@
 
         <div
           id="products"
-          class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3"
+          class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
         ></div>
 
         <p id="empty" class="hidden py-16 text-center text-[#75675B]">
@@ -433,37 +434,31 @@
       renderProducts();
     });
 
-    // Open WhatsApp with the selected product details and image URL.
+    // Open the specific WhatsApp chat with the selected product details prefilled.
+    // A wa.me link can prefill text, but cannot attach an actual image file.
     productsEl.addEventListener("click", event => {
       const button = event.target.closest("[data-order]");
       if (!button) return;
 
-      const product = products.find(
-        item => item.id === button.dataset.order
-      );
-
+      const product = products.find(item => item.id === button.dataset.order);
       if (!product) return;
 
-      const varietySelect = document.getElementById(
-        `variety-${product.id}`
-      );
+      const varietySelect = document.getElementById(`variety-${product.id}`);
+      if (!varietySelect) return;
 
       const selectedVariety = varietySelect.value;
-
-      // This URL works for other people only when the image is publicly hosted.
-      const productImageURL = new URL(
-        product.image,
-        window.location.href
-      ).href;
+      const productImageURL = new URL(product.image, window.location.href).href;
 
       const message = [
         "Hello Sabari Craft!",
+        "",
         "I would like to enquire about this product:",
         `Product: ${product.name}`,
         `Product code: ${product.id}`,
         `Variety: ${selectedVariety}`,
         `Listed price: ${RUPEE}${product.price.toLocaleString("en-IN")}`,
         `Product image: ${productImageURL}`,
+        "",
         "Please confirm availability and final price."
       ].join("\n");
 
@@ -473,11 +468,10 @@
       }
 
       const whatsappURL =
-        "https://wa.me/" + WHATSAPP_NUMBER +
-        "?text=" + encodeURIComponent(message);
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
-      // Open WhatsApp; the customer must press Send.
-      window.open(whatsappURL, "_blank", "noopener,noreferrer");
+      // Open the requested business chat directly, with the enquiry text filled in.
+      window.location.href = whatsappURL;
     });
 
     // Initial product display.

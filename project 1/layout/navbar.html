@@ -1,18 +1,18 @@
 <!-- navbar.html -->
 <header class="fixed top-0 left-0 right-0 z-40 w-full border-b border-[#E8DCC8] bg-white/95 backdrop-blur shadow-sm">
-  <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-2.5 sm:py-3">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6 sm:py-3 lg:px-8">
 
     <!-- Logo -->
     <a href="home.html" class="flex items-center group" aria-label="Sabari Craft Home">
       <img
         src="../imgs/logo/Sabari Craft Logo.png"
         alt="Sabari Craft"
-        class="h-11 sm:h-13 md:h-14 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+        class="h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-105 sm:h-12 lg:h-14"
       >
     </a>
 
     <!-- Desktop Navigation -->
-    <div class="hidden items-center gap-7 text-sm font-medium md:flex">
+    <div class="hidden items-center gap-5 text-sm font-medium lg:flex xl:gap-7">
       <a href="home.html"
          class="transition hover:text-[#A46F2D]">
         Home
@@ -36,9 +36,9 @@
 
     <!-- Explore Button -->
     <a href="shop.html"
-       class="hidden rounded-full bg-[#78452B] px-5 py-2.5
+       class="hidden rounded-full bg-[#78452B] px-4 py-2.5
               text-sm font-semibold text-white transition
-              hover:bg-[#5F3522] sm:inline-block">
+              hover:bg-[#5F3522] lg:inline-block xl:px-5">
       Explore Collection
     </a>
 
@@ -46,11 +46,15 @@
     <button
       id="menuButton"
       type="button"
-      class="rounded-lg border border-[#E8DCC8] px-3 py-2
-             text-sm font-semibold text-[#78452B] md:hidden"
+      class="inline-flex min-h-11 items-center gap-2 rounded-xl border border-[#E8DCC8] px-3 py-2
+             text-sm font-semibold text-[#78452B] transition hover:bg-[#FAF7F0] focus:outline-none focus:ring-2 focus:ring-[#A46F2D] focus:ring-offset-2 lg:hidden"
       aria-expanded="false"
-      aria-controls="mobileMenu">
-      Menu
+      aria-controls="mobileMenu"
+      aria-label="Open navigation menu">
+      <svg id="menuIcon" class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <span id="menuButtonLabel">Menu</span>
     </button>
 
   </nav>
@@ -58,28 +62,28 @@
   <!-- Mobile Navigation -->
   <div
     id="mobileMenu"
-    class="hidden border-t border-[#E8DCC8] bg-white px-5 py-4 md:hidden">
+    class="hidden border-t border-[#E8DCC8] bg-white px-4 py-3 shadow-lg sm:px-6 lg:hidden">
 
-    <div class="flex flex-col gap-4 text-sm font-medium text-[#78452B]">
+    <div class="mx-auto flex max-w-7xl flex-col gap-1 text-sm font-medium text-[#78452B]">
 
-      <a href="home.html" class="transition hover:text-[#A46F2D]">
+      <a href="home.html" class="rounded-lg px-3 py-3 transition hover:bg-[#FAF7F0] hover:text-[#A46F2D]">
         Home
       </a>
 
-      <a href="shop.html" class="transition hover:text-[#A46F2D]">
+      <a href="shop.html" class="rounded-lg px-3 py-3 transition hover:bg-[#FAF7F0] hover:text-[#A46F2D]">
         Shop Malas
       </a>
 
-      <a href="stories.html" class="transition hover:text-[#A46F2D]">
+      <a href="stories.html" class="rounded-lg px-3 py-3 transition hover:bg-[#FAF7F0] hover:text-[#A46F2D]">
         Our Stories
       </a>
 
-      <a href="about.html" class="transition hover:text-[#A46F2D]">
+      <a href="about.html" class="rounded-lg px-3 py-3 transition hover:bg-[#FAF7F0] hover:text-[#A46F2D]">
         About Us
       </a>
 
       <a href="shop.html"
-         class="font-semibold text-[#78452B] transition hover:text-[#A46F2D]">
+         class="mt-1 rounded-lg bg-[#78452B] px-4 py-3 text-center font-semibold text-white transition hover:bg-[#5F3522]">
         Explore Collection →
       </a>
 

@@ -1,21 +1,23 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../imgs/logo/icon%201.png">
   <title>Sabari Craft | Sacred Traditions</title>
   <meta name="description" content="Explore traditional devotional malas and handcrafted spiritual products at Sabari Craft.">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-[#FAF7F0] text-[#33251D] pt-[72px]">
+<body class="bg-[#FAF7F0] pt-[72px] text-[#33251D]">
 
   <!-- Reusable Navbar -->
   <div id="navbar-placeholder"></div>
 
   <main>
     <!-- Hero Section -->
-    <section id="home" class="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-24">
+    <section id="home" class="mx-auto grid max-w-7xl items-center gap-8 px-5 py-10 sm:gap-10 sm:py-12 md:grid-cols-2 md:py-16 2xl:gap-16 2xl:py-20">
       <div>
         <p class="mb-4 text-sm font-bold uppercase tracking-[0.25em] text-[#A46F2D]">
           Tradition &bull; Faith &bull; Craftsmanship
@@ -26,11 +28,11 @@
           <span class="text-[#A46F2D]">Sacred Story.</span>
         </h1>
 
-        <p class="mt-6 max-w-xl leading-7 text-[#75675B]">
+        <p class="mt-5 max-w-xl leading-7 text-[#75675B]">
           Discover traditional malas and devotional creations, thoughtfully presented with their stories, materials and cultural significance.
         </p>
 
-        <div class="mt-8 flex flex-wrap gap-3">
+        <div class="mt-7 flex flex-wrap gap-3">
           <a href="#shop" class="rounded-full bg-[#78452B] px-7 py-3.5 font-semibold text-white transition hover:bg-[#5F3522]">
             Shop Our Malas
           </a>
@@ -40,7 +42,7 @@
           </a>
         </div>
 
-        <div class="mt-10 flex gap-8 border-t border-[#E5D8C5] pt-6">
+        <div class="mt-8 flex gap-8 border-t border-[#E5D8C5] pt-5">
           <div>
             <p class="text-2xl font-bold text-[#78452B]">70+</p>
             <p class="mt-1 text-sm text-[#75675B]">Product varieties</p>
@@ -57,14 +59,15 @@
         <img
           src="../imgs/hero.png"
           alt="Traditional devotional mala display"
-          class="h-[360px] w-full rounded-3xl object-cover shadow-xl sm:h-[480px]"
+          class="h-[320px] w-full rounded-3xl border border-[#E8DCC8] object-cover shadow-xl sm:h-[420px]"
+          loading="eager"
         >
 
-        <div class="absolute bottom-5 left-5 right-5 rounded-2xl bg-white/95 p-5 shadow-lg">
+        <div class="absolute bottom-4 left-4 right-4 rounded-2xl bg-white/95 p-4 shadow-lg">
           <p class="text-xs font-semibold uppercase tracking-widest text-[#A46F2D]">
             Welcome to Sabari Craft
           </p>
-          <p class="mt-2 text-lg font-bold">
+          <p class="mt-1 text-lg font-bold">
             A collection inspired by devotion.
           </p>
         </div>
@@ -72,16 +75,19 @@
     </section>
 
     <!-- Shop Section -->
-    <section id="shop" class="bg-white py-16 sm:py-20">
+    <section id="shop" class="bg-white py-12 sm:py-16">
       <div class="mx-auto max-w-7xl px-5">
-        <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+
+        <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div>
             <p class="text-sm font-bold uppercase tracking-widest text-[#A46F2D]">
-              Explore our collection
+              Explore Our Collection
             </p>
+
             <h2 class="mt-2 text-3xl font-bold sm:text-4xl">
               Shop Our Malas
             </h2>
+
             <p class="mt-3 text-[#75675B]">
               Find a design that suits your devotional tradition.
             </p>
@@ -91,77 +97,96 @@
         </div>
 
         <!-- Search -->
-        <div class="mt-8">
+        <div class="mt-6">
           <label for="searchInput" class="sr-only">Search malas</label>
           <input
             id="searchInput"
             type="search"
             placeholder="Search malas by name..."
-            class="w-full rounded-xl border border-[#E5D8C5] bg-[#FAF7F0] px-5 py-4 outline-none focus:border-[#A46F2D] sm:max-w-md"
+            class="w-full rounded-xl border border-[#E5D8C5] bg-[#FAF7F0] px-5 py-3 outline-none focus:border-[#A46F2D] sm:max-w-md"
           >
         </div>
 
         <!-- Category Filters -->
-        <div id="categoryFilters" class="mt-5 flex flex-wrap gap-3">
-          <button data-category="All" class="rounded-full bg-[#78452B] px-5 py-2.5 text-sm font-semibold text-white">
+        <div id="categoryFilters" class="mt-4 flex flex-wrap gap-3">
+          <button type="button" data-category="All" class="rounded-full bg-[#78452B] px-5 py-2.5 text-sm font-semibold text-white">
             All Products
           </button>
 
-          <button data-category="Traditional" class="rounded-full border border-[#E5D8C5] px-5 py-2.5 text-sm hover:bg-[#FAF7F0]">
+          <button type="button" data-category="Traditional" class="rounded-full border border-[#E5D8C5] px-5 py-2.5 text-sm hover:bg-[#FAF7F0]">
             Traditional
           </button>
 
-          <button data-category="Decorative" class="rounded-full border border-[#E5D8C5] px-5 py-2.5 text-sm hover:bg-[#FAF7F0]">
+          <button type="button" data-category="Decorative" class="rounded-full border border-[#E5D8C5] px-5 py-2.5 text-sm hover:bg-[#FAF7F0]">
             Decorative
           </button>
 
-          <button data-category="Prayer Beads" class="rounded-full border border-[#E5D8C5] px-5 py-2.5 text-sm hover:bg-[#FAF7F0]">
+          <button type="button" data-category="Prayer Beads" class="rounded-full border border-[#E5D8C5] px-5 py-2.5 text-sm hover:bg-[#FAF7F0]">
             Prayer Beads
           </button>
         </div>
 
-        <!-- Product Cards -->
-        <div id="productGrid" class="mt-9 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
+        <!-- Compact Product Cards -->
+        <div id="productGrid" class="mt-7 grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:gap-7"></div>
 
         <p id="emptyMessage" class="hidden py-12 text-center text-[#75675B]">
           No products found. Try another search.
         </p>
+
+        <div class="mt-8 text-center">
+          <a href="shop.html" class="inline-flex rounded-full border border-[#D7C5AD] px-7 py-3 font-semibold transition hover:bg-[#F0E7D9]">
+            View All Products &rarr;
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- Stories Section -->
-    <!-- Stories Section -->
-    <section id="stories" class="py-16 sm:py-20">
+    <section id="stories" class="py-12 sm:py-16">
       <div class="mx-auto max-w-7xl px-5">
-        <div class="mx-auto mb-10 max-w-2xl text-center">
-          <p class="text-sm font-bold uppercase tracking-widest text-[#A46F2D]">More than a product</p>
-          <h2 class="mt-4 text-3xl font-bold leading-tight">Discover the Tradition Behind Every Mala</h2>
-          <p class="mt-4 leading-7 text-[#75675B]">Explore the cultural traditions, devotional associations and craftsmanship connected with our collections.</p>
+
+        <div class="mx-auto mb-8 max-w-2xl text-center">
+          <p class="text-sm font-bold uppercase tracking-widest text-[#A46F2D]">
+            More Than a Product
+          </p>
+
+          <h2 class="mt-3 text-3xl font-bold leading-tight">
+            Discover the Tradition Behind Every Mala
+          </h2>
+
+          <p class="mt-3 leading-7 text-[#75675B]">
+            Explore the cultural traditions, devotional associations and craftsmanship connected with our collections.
+          </p>
         </div>
 
-        <div class="grid items-center gap-10 md:grid-cols-2">
-          <!-- Image -->
-          <div class="relative overflow-hidden rounded-3xl shadow-xl">
+        <div class="grid items-center gap-8 md:grid-cols-2">
+          <div class="relative overflow-hidden rounded-3xl border border-[#E8DCC8] shadow-lg">
             <img
               src="../imgs/stories-section-banner.jpg"
-              alt="Traditional malas with warm candlelight in a devotional setting"
-              class="h-[340px] w-full object-cover"
+              alt="Traditional malas in a devotional setting"
+              class="h-[280px] w-full object-cover sm:h-[340px]"
               loading="lazy"
             >
-            <div class="absolute inset-0 bg-gradient-to-t from-[#33251D]/50 to-transparent rounded-3xl"></div>
-            <span class="absolute bottom-5 left-5 rounded-full bg-white/90 px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#78452B]">Explore Our Stories</span>
+
+            <div class="absolute inset-0 rounded-3xl bg-gradient-to-t from-[#33251D]/50 to-transparent"></div>
+
+            <span class="absolute bottom-5 left-5 rounded-full bg-white/90 px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#78452B]">
+              Explore Our Stories
+            </span>
           </div>
 
-          <!-- Text -->
           <div>
-            <h3 class="text-2xl font-bold">Stories rooted in tradition</h3>
+            <h3 class="text-2xl font-bold">Stories Rooted in Tradition</h3>
+
             <p class="mt-4 leading-7 text-[#75675B]">
               Every mala can have its own product description, materials, traditional significance and care instructions.
             </p>
-            <p class="mt-4 leading-7 text-[#75675B]">
+
+            <p class="mt-3 leading-7 text-[#75675B]">
               We aim to share these traditions respectfully and accurately, distinguishing religious beliefs from scientifically established benefits.
             </p>
-            <a href="stories.html" class="mt-7 inline-flex items-center gap-2 rounded-full bg-[#78452B] px-6 py-3 font-semibold text-white transition hover:bg-[#5F3522]">
+
+            <a href="stories.html" class="mt-5 inline-flex items-center gap-2 rounded-full bg-[#78452B] px-6 py-3 font-semibold text-white transition hover:bg-[#5F3522]">
               Read Our Stories &rarr;
             </a>
           </div>
@@ -170,19 +195,19 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="border-t border-[#E5D8C5] bg-white py-16">
+    <section id="about" class="border-t border-[#E5D8C5] bg-white py-12 sm:py-16">
       <div class="mx-auto max-w-3xl px-5 text-center">
         <p class="text-sm font-bold uppercase tracking-widest text-[#A46F2D]">
-          Our journey
+          Our Journey
         </p>
 
         <h2 class="mt-3 text-3xl font-bold">About Sabari Craft</h2>
 
-        <p class="mt-5 leading-7 text-[#75675B]">
+        <p class="mt-4 leading-7 text-[#75675B]">
           Sabari Craft brings traditional devotional products together in one place, helping customers explore different designs and learn about their cultural significance.
         </p>
 
-        <a href="about.html" class="mt-7 inline-block rounded-full bg-[#78452B] px-7 py-3.5 font-semibold text-white hover:bg-[#5F3522]">
+        <a href="about.html" class="mt-6 inline-block rounded-full bg-[#78452B] px-7 py-3 font-semibold text-white transition hover:bg-[#5F3522]">
           About Us
         </a>
       </div>
@@ -193,38 +218,46 @@
   <div id="footer-placeholder"></div>
 
   <script>
-    // Sample products. Replace these with your actual catalogue.
+    const RUPEE = "\u20B9";
+    const WHATSAPP_NUMBER = "918825415354";
+    const SMALL_BEADS_PRICE_FACTOR = 0.70;
+
+    // Home page products and their corresponding Google Drive links.
     const products = [
       {
         id: "SC001",
-        name: "Traditional Rudraksha Mala",
-        category: "Traditional",
-        price: 150,
-        image: "../imgs/products1/sandalwood-mala.jpg",
+        name: "Amethyst Mala",
+        category: "Decorative",
+        price: 300,
+        image: "../imgs/products1/amethyst-mala.jpg",
+        whatsappImage: "https://drive.google.com/file/d/1nfrqFN338EHVJvzjuMDNyvwapPWynyIQ/view?usp=drive_link",
         varieties: ["108 Beads", "54 Beads"]
       },
       {
         id: "SC002",
-        name: "Decorative Mala Collection",
-        category: "Decorative",
-        price: 250,
-        image: "../imgs/products1/multicolor-chakra-mala.jpg",
+        name: "Black Bead Mala",
+        category: "Traditional",
+        price: 200,
+        image: "../imgs/products1/black-bead-mala.jpg",
+        whatsappImage: "https://drive.google.com/file/d/1_6LxR8GohJHdKzEufyDnSL0b7kQSlG1W/view?usp=drive_link",
         varieties: ["108 Beads", "54 Beads"]
       },
       {
         id: "SC003",
-        name: "Rudraksha Prayer Mala",
-        category: "Prayer Beads",
-        price: 200,
-        image: "../imgs/products1/rudraksha-mala.jpg",
+        name: "Black and Gold Pendant Mala",
+        category: "Decorative",
+        price: 350,
+        image: "../imgs/products1/black-gold-pendant-mala.jpg",
+        whatsappImage: "https://drive.google.com/file/d/1Ffkf_iaxSqyqduC8b-9TvVxXiNFf9jc_/view?usp=drive_link",
         varieties: ["108 Beads", "54 Beads"]
       },
       {
         id: "SC004",
-        name: "Traditional Brown Bead Mala",
-        category: "Traditional",
-        price: 180,
-        image: "../imgs/products1/brown-wood-mala.jpg",
+        name: "Black Om Mala",
+        category: "Prayer Beads",
+        price: 250,
+        image: "../imgs/products1/black-om-mala.jpg",
+        whatsappImage: "https://drive.google.com/file/d/1DoP-Hd8Na9DT-Hes3zu7nu5JSS0XUgNZ/view?usp=drive_link",
         varieties: ["108 Beads", "54 Beads"]
       }
     ];
@@ -237,10 +270,25 @@
     const emptyMessage = document.getElementById("emptyMessage");
     const filters = document.getElementById("categoryFilters");
 
-    // WhatsApp business number (country code 91 + 10 digits).
-    const WHATSAPP_NUMBER = "918825415354";
-    // Rupee symbol via Unicode escape so it always renders correctly.
-    const RUPEE = "\u20B9";
+    function formatPrice(price) {
+      return `${RUPEE}${price.toLocaleString("en-IN")}`;
+    }
+
+    function getUnitPrice(product, beads) {
+      return beads === "54 Beads"
+        ? Math.round(product.price * SMALL_BEADS_PRICE_FACTOR)
+        : product.price;
+    }
+
+    function getValidQuantity(input) {
+      const quantity = Number(input.value);
+
+      if (!Number.isFinite(quantity) || quantity < 1) {
+        return 1;
+      }
+
+      return Math.floor(quantity);
+    }
 
     function renderProducts() {
       const term = searchInput.value.trim().toLowerCase();
@@ -266,57 +314,177 @@
       emptyMessage.classList.toggle("hidden", filtered.length > 0);
 
       grid.innerHTML = filtered.map(product => `
-        <article class="overflow-hidden rounded-2xl border border-[#E8DCC8] bg-white transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-          <div class="flex h-52 items-center justify-center bg-[#F3EBDD] p-5">
-            <img
-              src="${product.image}"
-              alt="${product.name}"
-              class="h-full w-full rounded-xl object-cover"
-              onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
-            >
-            <div class="hidden text-center text-sm text-[#8B735D]">
-              <span class="text-4xl">ðŸ™</span>
-              <p class="mt-3">Add product photo</p>
+        <article class="flex h-full flex-col overflow-hidden rounded-2xl border border-[#E8DCC8] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+          <!-- Compact Product Image -->
+          <div class="bg-[#FAF7F0] p-2">
+            <div class="flex h-40 items-center justify-center overflow-hidden rounded-xl border border-[#E8DCC8] bg-white p-2 shadow-sm">
+              <img
+                src="${product.image}"
+                alt="${product.name}"
+                class="h-full w-full rounded-lg object-contain transition duration-300 hover:scale-[1.03]"
+                loading="lazy"
+                onerror="this.onerror=null; this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');"
+              >
+
+              <div class="hidden h-full w-full items-center justify-center rounded-lg bg-[#FAF7F0] p-3 text-center text-xs text-[#8B735D]">
+                Image unavailable: ${product.name}
+              </div>
             </div>
           </div>
 
-          <div class="p-5">
-            <p class="text-xs font-semibold uppercase tracking-widest text-[#A46F2D]">
+          <!-- Compact Product Details -->
+          <div class="flex flex-1 flex-col p-3.5">
+
+            <p class="text-[10px] font-semibold uppercase tracking-widest text-[#A46F2D]">
               ${product.category}
             </p>
 
-            <h3 class="mt-2 text-lg font-bold">${product.name}</h3>
+            <h3 class="mt-1 text-base font-bold leading-snug text-[#33251D]">
+              ${product.name}
+            </h3>
 
-            <p class="mt-2 text-sm text-[#75675B]">
+            <p class="mt-1 text-xs text-[#75675B]">
               Product code: ${product.id}
             </p>
 
-            <p class="mt-3 text-xl font-bold text-[#78452B]">
-              ${RUPEE}${product.price.toLocaleString("en-IN")}
-            </p>
+            <!-- Beads and Quantity -->
+            <div class="mt-3 grid grid-cols-2 gap-2.5">
 
-            <label for="variety-${product.id}" class="mt-4 block text-sm font-medium">
-              Choose a variety
-            </label>
+              <div class="min-w-0">
+                <label for="beads-${product.id}" class="block text-xs font-semibold">
+                  Beads
+                </label>
 
-            <select id="variety-${product.id}" class="mt-2 w-full rounded-lg border border-[#E5D8C5] bg-[#FAF7F0] px-3 py-3 text-sm">
-              ${product.varieties.map(v => `<option value="${v}">${v}</option>`).join("")}
-            </select>
+                <select
+                  id="beads-${product.id}"
+                  class="mt-1.5 h-9 w-full rounded-lg border border-[#E5D8C5] bg-[#FAF7F0] px-2 text-xs outline-none focus:border-[#A46F2D]"
+                >
+                  <option value="108 Beads">108 Beads</option>
+                  <option value="54 Beads">54 Beads</option>
+                </select>
+              </div>
 
-            <button data-order="${product.id}" class="mt-4 w-full rounded-xl bg-[#78452B] px-4 py-3 font-semibold text-white transition hover:bg-[#5F3522]">
+              <div class="min-w-0">
+                <label for="quantity-${product.id}" class="block text-xs font-semibold">
+                  Quantity
+                </label>
+
+                <div class="mt-1.5 flex h-9 w-full items-center overflow-hidden rounded-lg border border-[#E5D8C5] bg-[#FAF7F0]">
+
+                  <button
+                    type="button"
+                    data-quantity-action="decrease"
+                    data-product-id="${product.id}"
+                    class="flex h-full w-6 shrink-0 items-center justify-center text-base hover:bg-[#E8DCC8]"
+                    aria-label="Decrease quantity"
+                  >&minus;</button>
+
+                  <input
+                    id="quantity-${product.id}"
+                    type="number"
+                    min="1"
+                    step="1"
+                    value="1"
+                    inputmode="numeric"
+                    class="h-full min-w-0 w-full border-x border-[#E5D8C5] bg-transparent text-center text-xs outline-none"
+                    aria-label="Quantity"
+                  >
+
+                  <button
+                    type="button"
+                    data-quantity-action="increase"
+                    data-product-id="${product.id}"
+                    class="flex h-full w-6 shrink-0 items-center justify-center text-base hover:bg-[#E8DCC8]"
+                    aria-label="Increase quantity"
+                  >+</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Total Price -->
+            <div class="mt-3 rounded-lg bg-[#FAF7F0] px-3 py-2">
+              <p class="text-xs text-[#75675B]">Total Price</p>
+
+              <p
+                id="total-${product.id}"
+                class="mt-0.5 text-lg font-bold text-[#78452B]"
+                aria-live="polite"
+              >
+                ${formatPrice(product.price)}
+              </p>
+            </div>
+
+            <!-- WhatsApp Enquiry -->
+            <button
+              type="button"
+              data-order="${product.id}"
+              class="mt-3 flex w-full items-center justify-center gap-1.5 rounded-lg bg-[#78452B] px-2 py-2.5 text-xs font-semibold text-white transition hover:bg-[#5F3522] focus:outline-none focus:ring-2 focus:ring-[#A46F2D] focus:ring-offset-2"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.5 8.5 0 0 1 8.7 3.9a8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/>
+              </svg>
               Enquire on WhatsApp
             </button>
+
           </div>
         </article>
       `).join("");
+
+      // Update the price when beads or quantity changes.
+      filtered.forEach(product => {
+        const beadsSelect = document.getElementById(`beads-${product.id}`);
+        const quantityInput = document.getElementById(`quantity-${product.id}`);
+        const totalElement = document.getElementById(`total-${product.id}`);
+
+        function updateTotal() {
+          const quantity = getValidQuantity(quantityInput);
+          const unitPrice = getUnitPrice(product, beadsSelect.value);
+
+          totalElement.textContent = formatPrice(unitPrice * quantity);
+        }
+
+        beadsSelect.addEventListener("change", updateTotal);
+        quantityInput.addEventListener("input", updateTotal);
+
+        quantityInput.addEventListener("change", () => {
+          quantityInput.value = getValidQuantity(quantityInput);
+          updateTotal();
+        });
+
+        updateTotal();
+      });
     }
 
-    // Search products
+    // Quantity plus and minus buttons.
+    grid.addEventListener("click", event => {
+      const quantityButton = event.target.closest("button[data-quantity-action]");
+
+      if (!quantityButton) return;
+
+      const input = document.getElementById(
+        `quantity-${quantityButton.dataset.productId}`
+      );
+
+      if (!input) return;
+
+      const currentQuantity = getValidQuantity(input);
+
+      input.value =
+        quantityButton.dataset.quantityAction === "increase"
+          ? currentQuantity + 1
+          : Math.max(1, currentQuantity - 1);
+
+      input.dispatchEvent(new Event("input", { bubbles: true }));
+    });
+
+    // Search products.
     searchInput.addEventListener("input", renderProducts);
 
-    // Filter categories
+    // Filter categories.
     filters.addEventListener("click", event => {
       const button = event.target.closest("button[data-category]");
+
       if (!button) return;
 
       activeCategory = button.dataset.category;
@@ -332,45 +500,66 @@
       renderProducts();
     });
 
-    // WhatsApp product enquiry
+    // WhatsApp enquiry with product details and its Google Drive image link.
     grid.addEventListener("click", event => {
       const button = event.target.closest("button[data-order]");
+
       if (!button) return;
 
-      const product = products.find(p => p.id === button.dataset.order);
+      const product = products.find(
+        item => item.id === button.dataset.order
+      );
+
       if (!product) return;
 
-      const selected = document.getElementById(`variety-${product.id}`).value;
+      const beadsSelect = document.getElementById(`beads-${product.id}`);
+      const quantityInput = document.getElementById(`quantity-${product.id}`);
+
+      if (!beadsSelect || !quantityInput) return;
+
+      const selectedBeads = beadsSelect.value;
+      const quantity = getValidQuantity(quantityInput);
+
+      quantityInput.value = quantity;
+
+      const unitPrice = getUnitPrice(product, selectedBeads);
+      const totalPrice = unitPrice * quantity;
+
+      document.getElementById(`total-${product.id}`).textContent =
+        formatPrice(totalPrice);
 
       const message = [
         "Hello Sabari Craft!",
-        "I am interested in this product:",
+        "",
+        "I would like to enquire about this product:",
         `Product: ${product.name}`,
-        `Code: ${product.id}`,
-        `Variety: ${selected}`,
-        `Listed price: ${RUPEE}${product.price}`,
+        `Product code: ${product.id}`,
+        `Beads: ${selectedBeads}`,
+        `Quantity: ${quantity}`,
+        `Price per mala: ${formatPrice(unitPrice)}`,
+        `Total price: ${formatPrice(totalPrice)}`,
+        `Product image: ${product.whatsappImage}`,
+        "",
         "Please confirm availability and final price."
       ].join("\n");
 
       if (!/^91\d{10}$/.test(WHATSAPP_NUMBER)) {
-        alert("Please add your valid WhatsApp business number in the JavaScript before enabling enquiries.");
+        alert("Please check the WhatsApp business number.");
         return;
       }
 
-      window.open(
-        "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message),
-        "_blank",
-        "noopener,noreferrer"
-      );
+      const whatsappURL =
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+      window.open(whatsappURL, "_blank", "noopener,noreferrer");
     });
 
+    // Display products when the page loads.
     renderProducts();
-
   </script>
 
+  <!-- Load Shared Navbar and Footer -->
   <script src="component-loader.js"></script>
 
 </body>
 </html>
-
-
