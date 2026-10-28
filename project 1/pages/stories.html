@@ -7,6 +7,9 @@
   <meta name="description" content="Discover the traditions and devotional stories associated with malas at Sabari Craft.">
   <title>Our Stories | Sabari Craft</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../layout/loading-screen.css">
+  <script src="../layout/loading-screen.js" defer></script>
+  <script src="../layout/product-actions.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -39,6 +42,20 @@
 </head>
 
 <body class="bg-[#FAF7F0] text-[#33251D] pt-[72px] antialiased">
+  <div id="site-loader" class="site-loader" role="status" aria-live="polite" aria-label="Preparing your experience">
+    <div class="site-loader__content">
+      <div class="site-loader__symbol" aria-hidden="true">
+        <span class="site-loader__om">ॐ</span>
+      </div>
+      <p class="site-loader__brand">Sabari Craft</p>
+      <p class="site-loader__tagline">Tradition · Devotion · Craftsmanship</p>
+      <div class="site-loader__track" aria-hidden="true">
+        <div class="site-loader__bar"></div>
+      </div>
+      <p class="site-loader__status">Preparing your experience<span class="site-loader__dots" aria-hidden="true"></span></p>
+      <p class="site-loader__footer">MADE WITH DEVOTION</p>
+    </div>
+  </div>
 
   <!-- Reusable Navbar -->
   <div id="navbar-placeholder"></div>
@@ -47,14 +64,14 @@
 
     <!-- Hero Section -->
     <section class="border-b border-[#E8DCC8] bg-[#F0E5D3]">
-      <div class="mx-auto grid max-w-7xl items-center gap-8 px-5 py-12 sm:gap-10 sm:py-14 md:grid-cols-2 md:py-20 2xl:gap-16">
+      <div class="mx-auto grid max-w-7xl items-center gap-8 px-4 py-10 sm:gap-10 sm:px-6 sm:py-14 md:grid-cols-2 md:py-16 lg:px-8 lg:py-20 xl:px-10 2xl:gap-16 2xl:px-12 2xl:py-24">
 
         <div>
           <p class="text-sm font-bold uppercase tracking-[0.22em] text-[#A46F2D]">
             Faith &bull; Culture &bull; Tradition
           </p>
 
-          <h1 class="mt-4 text-4xl font-bold leading-tight sm:text-5xl">
+          <h1 class="mt-4 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl">
             Every Mala Has a
             <span class="text-[#A46F2D]">Story to Tell.</span>
           </h1>
@@ -73,11 +90,11 @@
           </a>
         </div>
 
-        <div class="overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
+        <div class="overflow-hidden rounded-2xl shadow-xl ring-1 ring-black/5 sm:rounded-3xl">
           <img
             src="../imgs/Devotional Malas on a Golden Altar.png"
             alt="Devotional malas and traditional prayer beads on a golden altar"
-            class="h-[300px] w-full object-cover transition duration-700 hover:scale-105 sm:h-[390px]"
+            class="h-[250px] w-full object-cover transition duration-700 hover:scale-105 sm:h-[330px] md:h-[390px] lg:h-[440px] xl:h-[480px] 2xl:h-[540px]"
           >
         </div>
 
@@ -85,13 +102,13 @@
     </section>
 
     <!-- Introduction Section -->
-    <section class="mx-auto max-w-4xl px-5 py-14 text-center">
+    <section class="mx-auto max-w-4xl px-4 py-12 text-center sm:px-6 sm:py-14 lg:px-8 lg:py-16 2xl:py-20">
 
       <p class="text-sm font-bold uppercase tracking-widest text-[#A46F2D]">
         Discover the meaning
       </p>
 
-      <h2 class="mt-3 text-3xl font-bold sm:text-4xl">
+      <h2 class="mt-3 text-2xl font-bold sm:text-3xl md:text-4xl 2xl:text-5xl">
         Traditions Behind the Beads
       </h2>
 
@@ -106,7 +123,7 @@
 
     <!-- Stories Collection -->
     <section id="stories" class="border-t border-[#E8DCC8] bg-white py-14 sm:py-16">
-      <div class="mx-auto max-w-7xl px-5">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
 
         <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end">
 
@@ -202,7 +219,7 @@
         <!-- Story Cards Grid -->
         <div
           id="storyGrid"
-          class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3 2xl:grid-cols-4"
+          class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:gap-7 2xl:grid-cols-4 2xl:gap-8"
         ></div>
 
         <!-- Empty Message -->
@@ -289,14 +306,14 @@
   <!-- Story Detail Modal -->
   <div
     id="storyModal"
-    class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 p-4 sm:p-6 backdrop-blur-sm transition-opacity duration-300"
+    class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 p-2 backdrop-blur-sm transition-opacity duration-300 sm:p-4 lg:p-6"
     role="dialog"
     aria-modal="true"
     aria-labelledby="modalTitle"
     aria-hidden="true"
   >
 
-    <div class="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-white p-6 shadow-2xl sm:p-8">
+    <div class="relative max-h-[92vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-white p-4 shadow-2xl sm:rounded-3xl sm:p-6 lg:p-8">
 
       <!-- Modal Header -->
       <div class="flex items-start justify-between gap-4">
@@ -307,7 +324,7 @@
             class="inline-block rounded-full bg-[#F3EAD9] px-3.5 py-1 text-xs font-bold uppercase tracking-widest text-[#78452B]"
           ></span>
 
-          <h2 id="modalTitle" class="mt-2 text-2xl font-bold text-[#33251D] sm:text-3xl"></h2>
+          <h2 id="modalTitle" class="mt-2 text-xl font-bold text-[#33251D] sm:text-2xl lg:text-3xl"></h2>
           <p id="modalSubtitle" class="mt-1 text-sm text-[#8B735D] italic"></p>
         </div>
 
@@ -475,7 +492,7 @@
           class="group cursor-pointer overflow-hidden rounded-2xl border border-[#E8DCC8] bg-[#FAF7F0] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#A46F2D]/60 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#78452B]"
         >
           <!-- Card Image Container -->
-          <div class="relative flex h-52 items-center justify-center overflow-hidden bg-[#F0E5D3]">
+          <div class="relative flex h-48 items-center justify-center overflow-hidden bg-[#F0E5D3] sm:h-56 lg:h-60 2xl:h-64">
             <img
               src="${story.image}"
               alt="${story.title}"
@@ -489,8 +506,8 @@
           </div>
 
           <!-- Card Content -->
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-[#33251D] transition-colors duration-200 group-hover:text-[#78452B]">
+          <div class="p-4 sm:p-5 lg:p-6">
+            <h3 class="text-lg font-bold text-[#33251D] transition-colors duration-200 group-hover:text-[#78452B] sm:text-xl">
               ${story.title}
             </h3>
 

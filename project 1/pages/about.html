@@ -10,9 +10,26 @@
   <meta name="description" content="Discover Sabari Craft, traditional devotional malas, and the stories behind our collection.">
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../layout/loading-screen.css">
+  <script src="../layout/loading-screen.js" defer></script>
+  <script src="../layout/product-actions.js" defer></script>
 </head>
 
 <body class="bg-[#FAF7F0] text-[#33251D] pt-[72px]">
+  <div id="site-loader" class="site-loader" role="status" aria-live="polite" aria-label="Preparing your experience">
+    <div class="site-loader__content">
+      <div class="site-loader__symbol" aria-hidden="true">
+        <span class="site-loader__om">ॐ</span>
+      </div>
+      <p class="site-loader__brand">Sabari Craft</p>
+      <p class="site-loader__tagline">Tradition · Devotion · Craftsmanship</p>
+      <div class="site-loader__track" aria-hidden="true">
+        <div class="site-loader__bar"></div>
+      </div>
+      <p class="site-loader__status">Preparing your experience<span class="site-loader__dots" aria-hidden="true"></span></p>
+      <p class="site-loader__footer">MADE WITH DEVOTION</p>
+    </div>
+  </div>
 
   <!-- Navbar -->
   <div id="navbar-placeholder"></div>
@@ -21,14 +38,14 @@
 
     <!-- Hero Section -->
     <section class="bg-[#F0E5D3]">
-      <div class="mx-auto grid max-w-7xl items-center gap-8 px-5 py-12 sm:gap-10 sm:py-14 md:grid-cols-2 md:py-20 2xl:gap-16">
+      <div class="mx-auto grid max-w-7xl items-center gap-8 px-4 py-10 sm:gap-10 sm:px-6 sm:py-14 md:grid-cols-2 md:py-16 lg:px-8 lg:py-20 xl:px-10 2xl:gap-16 2xl:px-12 2xl:py-24">
 
         <div>
           <p class="text-sm font-bold uppercase tracking-[0.22em] text-[#A46F2D]">
             Welcome to Sabari Craft
           </p>
 
-          <h1 class="mt-4 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+          <h1 class="mt-4 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl">
             Rooted in Tradition.
             <span class="text-[#A46F2D]">Made with Devotion.</span>
           </h1>
@@ -68,10 +85,10 @@
           <img
             src="../imgs/Serene Shiva Shrine with Rudraksha Mala.png"
             alt="Rudraksha mala displayed in a devotional setting"
-            class="h-[350px] w-full object-cover sm:h-[470px] lg:h-[530px]"
+            class="h-[280px] w-full object-cover sm:h-[380px] md:h-[430px] lg:h-[500px] xl:h-[540px] 2xl:h-[600px]"
           >
 
-          <div class="absolute inset-x-4 bottom-4 rounded-2xl border border-white/60 bg-white/90 p-5 backdrop-blur-sm sm:inset-x-6 sm:bottom-6">
+          <div class="absolute inset-x-3 bottom-3 rounded-2xl border border-white/60 bg-white/90 p-4 backdrop-blur-sm sm:inset-x-6 sm:bottom-6 sm:p-5 lg:p-6">
             <p class="text-xs font-bold uppercase tracking-widest text-[#A46F2D]">
               Tradition &bull; Faith &bull; Craftsmanship
             </p>
@@ -86,13 +103,13 @@
     </section>
 
     <!-- Our Story -->
-    <section class="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-20">
+    <section class="mx-auto grid max-w-7xl items-center gap-8 px-4 py-12 sm:gap-10 sm:px-6 sm:py-16 md:grid-cols-2 md:py-20 lg:px-8 xl:px-10 2xl:px-12">
 
       <div class="group overflow-hidden rounded-3xl shadow-lg">
         <img
           src="../imgs/rudraksha-mala.png"
           alt="Traditional Rudraksha mala arranged on cream fabric"
-          class="h-[320px] w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-[430px]"
+          class="h-[280px] w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-[350px] md:h-[400px] lg:h-[440px] xl:h-[480px] 2xl:h-[520px]"
           loading="lazy"
         >
       </div>
@@ -132,8 +149,8 @@
     </section>
 
     <!-- Explore Our Stories -->
-    <section class="bg-[#EEE2CF] py-14">
-      <div class="mx-auto grid max-w-7xl items-center gap-10 px-5 md:grid-cols-2">
+    <section class="bg-[#EEE2CF] py-12 sm:py-14 lg:py-16 2xl:py-20">
+      <div class="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:gap-10 sm:px-6 md:grid-cols-2 lg:px-8 xl:px-10 2xl:px-12">
 
         <div>
           <p class="text-sm font-bold uppercase tracking-widest text-[#A46F2D]">
@@ -159,7 +176,7 @@
           <img
             src="../imgs/stories-section-banner.jpg"
             alt="Traditional malas with warm candlelight in a devotional setting"
-            class="h-[320px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            class="h-[260px] w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-[340px] md:h-[380px] lg:h-[430px] xl:h-[470px] 2xl:h-[520px]"
             loading="lazy"
           >
 
@@ -175,7 +192,7 @@
 
     <!-- Collection Section -->
     <section class="bg-white py-16 sm:py-20">
-      <div class="mx-auto max-w-7xl px-5">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
 
         <div class="mx-auto max-w-2xl text-center">
           <p class="text-sm font-bold uppercase tracking-widest text-[#A46F2D]">
@@ -192,7 +209,7 @@
           </p>
         </div>
 
-        <div class="mt-10 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3 xl:gap-8">
 
           <!-- Traditional Malas -->
           <article class="group overflow-hidden rounded-2xl border border-[#E8DCC8] bg-[#FAF7F0] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">

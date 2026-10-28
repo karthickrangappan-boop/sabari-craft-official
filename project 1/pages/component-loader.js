@@ -32,6 +32,8 @@
                 : "M4 6h16M4 12h16M4 18h16"
             );
             mobileMenu.classList.toggle("hidden", !isOpen);
+            mobileMenu.style.display = isOpen ? "block" : "none";
+            mobileMenu.setAttribute("aria-hidden", String(!isOpen));
           };
 
           menuButton.addEventListener("click", () => {
@@ -52,16 +54,22 @@
             }
           });
 
-          window.matchMedia("(min-width: 1024px)").addEventListener("change", event => {
+          const desktopBreakpoint = window.matchMedia("(min-width: 1024px)");
+          const closeMenuOnDesktop = event => {
             if (event.matches) setMenuOpen(false);
-          });
+          };
+          if (desktopBreakpoint.addEventListener) {
+            desktopBreakpoint.addEventListener("change", closeMenuOnDesktop);
+          } else {
+            desktopBreakpoint.addListener(closeMenuOnDesktop);
+          }
         }
 
         // ── Active nav link indicator ──────────────────────────────
         const currentPage = window.location.pathname.split("/").pop() || "home.html";
 
         // Desktop navigation links, excluding the logo and collection CTA.
-        placeholder.querySelectorAll("nav > div a[href]").forEach(link => {
+        placeholder.querySelectorAll("[data-primary-navigation] a[href]").forEach(link => {
           const linkPage = link.getAttribute("href").split("/").pop();
           if (linkPage === currentPage) {
             // Active styles: brand color + underline dot-bar
@@ -105,5 +113,7 @@
   Promise.all([
     loadComponent("navbar-placeholder", "../layout/navbar.html"),
     loadComponent("footer-placeholder", "../layout/footer.html")
-  ]);
+  ]).then(() => {
+    window.dispatchEvent(new Event("sabari-components-loaded"));
+  });
 })();

@@ -1,0 +1,724 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#faf8f3" />
+  <title>Delivery Address | Sabari Craft</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-stone-50 pt-[72px] text-stone-800">
+
+  <div id="navbar-placeholder"></div>
+
+  <!-- Responsive page container -->
+  <main class="min-h-screen px-3 py-6
+               sm:px-5 sm:py-8
+               md:px-8 md:py-10
+               lg:px-10 lg:py-12
+               xl:px-12
+               2xl:px-16 2xl:py-16">
+
+    <div class="mx-auto w-full max-w-xl
+                sm:max-w-2xl
+                lg:max-w-4xl
+                xl:max-w-5xl
+                2xl:max-w-6xl">
+
+      <!-- Header -->
+      <header class="mb-6 text-center
+                     sm:mb-8
+                     lg:mb-10">
+
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-amber-800
+                  sm:text-sm
+                  2xl:text-base">
+          Sabari Craft
+        </p>
+
+        <h1 class="mt-2 text-2xl font-bold tracking-tight text-stone-900
+                   sm:text-3xl
+                   md:text-4xl
+                   xl:text-5xl">
+          Delivery Address
+        </h1>
+
+        <p class="mx-auto mt-2 max-w-lg text-sm leading-6 text-stone-500
+                  sm:text-base
+                  md:mt-3
+                  2xl:max-w-2xl 2xl:text-lg">
+          Enter your delivery details before continuing to WhatsApp.
+        </p>
+      </header>
+
+      <!-- Main card -->
+      <section class="overflow-hidden rounded-2xl border border-stone-200
+                      bg-white shadow-sm
+                      sm:rounded-3xl
+                      lg:shadow-lg">
+
+        <div class="grid grid-cols-1 lg:grid-cols-5">
+
+          <!-- Left: Product summary -->
+          <aside class="bg-amber-50 p-4
+                        sm:p-6
+                        md:p-7
+                        lg:col-span-2 lg:p-8
+                        xl:p-10
+                        2xl:p-12">
+
+            <div class="flex items-center gap-3
+                        lg:flex-col lg:items-start">
+
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center
+                          rounded-xl bg-white text-2xl shadow-sm
+                          sm:h-14 sm:w-14 sm:text-3xl
+                          lg:h-16 lg:w-16 lg:rounded-2xl
+                          2xl:h-20 2xl:w-20">
+                📿
+              </div>
+
+              <div>
+                <h2 class="text-base font-bold text-stone-900
+                           sm:text-lg
+                           lg:mt-4
+                           2xl:text-2xl">
+                  Your Selection
+                </h2>
+
+                <p class="mt-1 text-xs text-stone-600
+                          sm:text-sm
+                          2xl:text-base">
+                  Review your product before ordering.
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-5 rounded-xl border border-amber-100
+                        bg-white p-4
+                        sm:mt-6 sm:p-5
+                        lg:mt-8 lg:rounded-2xl lg:p-6
+                        2xl:p-8">
+
+              <p id="productName"
+                 class="whitespace-pre-line break-words text-base font-bold text-stone-900
+                        sm:text-lg
+                        lg:text-xl
+                        2xl:text-2xl">
+                Tulsi Mala
+              </p>
+
+              <div class="mt-3 space-y-2 text-sm text-stone-600
+                          sm:text-base
+                          2xl:text-lg">
+
+                <div class="flex items-center justify-between gap-3">
+                  <span>Bead count</span>
+                  <span id="productBeads"
+                        class="font-medium text-stone-800">108</span>
+                </div>
+
+                <div class="flex items-center justify-between gap-3">
+                  <span>Quantity</span>
+                  <span id="productQuantity"
+                        class="font-medium text-stone-800">1</span>
+                </div>
+
+                <div class="flex items-center justify-between gap-3">
+                  <span>Unit price</span>
+                  <span id="unitPrice">₹299.00</span>
+                </div>
+              </div>
+
+              <div class="mt-4 border-t border-stone-200 pt-4
+                          sm:mt-5 sm:pt-5">
+
+                <div class="flex items-center justify-between gap-3">
+                  <span class="text-sm font-medium text-stone-600
+                               sm:text-base">
+                    Total
+                  </span>
+
+                  <span class="text-xl font-bold text-amber-900
+                               sm:text-2xl
+                               lg:text-3xl
+                               2xl:text-4xl">
+                    ₹<span id="productTotal">299.00</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 flex items-start gap-3
+                        sm:mt-5
+                        lg:mt-8">
+
+              <span class="text-lg" aria-hidden="true">🔒</span>
+
+              <p class="text-xs leading-5 text-stone-600
+                        sm:text-sm sm:leading-6
+                        2xl:text-base">
+                Your address details will be included in the WhatsApp
+                message you choose to send to Sabari Craft.
+              </p>
+            </div>
+          </aside>
+
+          <!-- Right: Address form -->
+          <div class="p-4
+                      sm:p-6
+                      md:p-8
+                      lg:col-span-3 lg:p-9
+                      xl:p-10
+                      2xl:p-12">
+
+            <div class="mb-5 sm:mb-7">
+              <h2 class="text-lg font-bold text-stone-900
+                         sm:text-xl
+                         md:text-2xl
+                         2xl:text-3xl">
+                Customer Information
+              </h2>
+
+              <p class="mt-1 text-sm text-stone-500
+                        sm:text-base
+                        2xl:text-lg">
+                Fields marked with * are required.
+              </p>
+            </div>
+
+            <form id="addressForm"
+                  class="space-y-4
+                         sm:space-y-5
+                         lg:space-y-6">
+
+              <!-- Full name -->
+              <div>
+                <label for="fullName"
+                       class="mb-1.5 block text-sm font-medium text-stone-700
+                              sm:text-base">
+                  Full Name *
+                </label>
+
+                <input id="fullName" name="fullName" type="text"
+                       autocomplete="name"
+                       maxlength="100" required
+                       placeholder="Enter your full name"
+                       class="w-full min-w-0 rounded-lg border border-stone-300
+                              bg-white px-3 py-3 text-sm outline-none transition
+                              placeholder:text-stone-400
+                              focus:border-amber-700 focus:ring-2 focus:ring-amber-100
+                              sm:rounded-xl sm:px-4 sm:py-3.5 sm:text-base
+                              2xl:py-4 2xl:text-lg" />
+              </div>
+
+              <!-- Mobile and email -->
+              <div class="grid grid-cols-1 gap-4
+                          sm:grid-cols-2 sm:gap-5
+                          lg:gap-6">
+
+                <div class="min-w-0">
+                  <label for="phone"
+                         class="mb-1.5 block text-sm font-medium text-stone-700
+                                sm:text-base">
+                    Mobile Number *
+                  </label>
+
+                  <input id="phone" name="phone" type="tel"
+                         inputmode="numeric" autocomplete="tel"
+                         pattern="[6-9][0-9]{9}" maxlength="10"
+                         required placeholder="10-digit number"
+                         class="w-full min-w-0 rounded-lg border border-stone-300
+                                px-3 py-3 text-sm outline-none transition
+                                focus:border-amber-700 focus:ring-2 focus:ring-amber-100
+                                sm:rounded-xl sm:px-4 sm:py-3.5 sm:text-base
+                                2xl:py-4 2xl:text-lg" />
+                </div>
+
+                <div class="min-w-0">
+                  <label for="email"
+                         class="mb-1.5 block text-sm font-medium text-stone-700
+                                sm:text-base">
+                    Email Address
+                    <span class="font-normal text-stone-400">(Optional)</span>
+                  </label>
+
+                  <input id="email" name="email" type="email"
+                         autocomplete="email"
+                         placeholder="you@example.com"
+                         class="w-full min-w-0 rounded-lg border border-stone-300
+                                px-3 py-3 text-sm outline-none transition
+                                focus:border-amber-700 focus:ring-2 focus:ring-amber-100
+                                sm:rounded-xl sm:px-4 sm:py-3.5 sm:text-base
+                                2xl:py-4 2xl:text-lg" />
+                </div>
+              </div>
+
+              <!-- Address -->
+              <div>
+                <label for="address"
+                       class="mb-1.5 block text-sm font-medium text-stone-700
+                              sm:text-base">
+                  House Number, Street and Area *
+                </label>
+
+                <textarea id="address" name="address" rows="3"
+                          autocomplete="street-address"
+                          maxlength="300" required
+                          placeholder="Enter your complete delivery address"
+                          class="w-full min-w-0 resize-y rounded-lg border
+                                 border-stone-300 px-3 py-3 text-sm outline-none
+                                 transition placeholder:text-stone-400
+                                 focus:border-amber-700 focus:ring-2 focus:ring-amber-100
+                                 sm:rounded-xl sm:px-4 sm:py-3.5 sm:text-base
+                                 2xl:text-lg"></textarea>
+              </div>
+
+              <!-- Landmark -->
+              <div>
+                <label for="landmark"
+                       class="mb-1.5 block text-sm font-medium text-stone-700
+                              sm:text-base">
+                  Landmark
+                  <span class="font-normal text-stone-400">(Optional)</span>
+                </label>
+
+                <input id="landmark" name="landmark" type="text"
+                       maxlength="150"
+                       placeholder="Nearby temple, bus stop, etc."
+                       class="w-full min-w-0 rounded-lg border border-stone-300
+                              px-3 py-3 text-sm outline-none transition
+                              focus:border-amber-700 focus:ring-2 focus:ring-amber-100
+                              sm:rounded-xl sm:px-4 sm:py-3.5 sm:text-base
+                              2xl:py-4 2xl:text-lg" />
+              </div>
+
+              <!-- City and district -->
+              <div class="grid grid-cols-1 gap-4
+                          sm:grid-cols-2 sm:gap-5
+                          lg:gap-6">
+
+                <div class="min-w-0">
+                  <label for="city"
+                         class="mb-1.5 block text-sm font-medium text-stone-700
+                                sm:text-base">
+                    City / Town *
+                  </label>
+
+                  <input id="city" name="city" type="text"
+                         autocomplete="address-level2"
+                         maxlength="100" required
+                         placeholder="City or town"
+                         class="w-full min-w-0 rounded-lg border border-stone-300
+                                px-3 py-3 text-sm outline-none transition
+                                focus:border-amber-700 focus:ring-2 focus:ring-amber-100
+                                sm:rounded-xl sm:px-4 sm:py-3.5 sm:text-base
+                                2xl:py-4 2xl:text-lg" />
+                </div>
+
+                <div class="min-w-0">
+                  <label for="district"
+                         class="mb-1.5 block text-sm font-medium text-stone-700
+                                sm:text-base">
+                    District *
+                  </label>
+
+                  <input id="district" name="district" type="text"
+                         maxlength="100" required
+                         placeholder="District"
+                         class="w-full min-w-0 rounded-lg border border-stone-300
+                                px-3 py-3 text-sm outline-none transition
+                                focus:border-amber-700 focus:ring-2 focus:ring-amber-100
+                                sm:rounded-xl sm:px-4 sm:py-3.5 sm:text-base
+                                2xl:py-4 2xl:text-lg" />
+                </div>
+              </div>
+
+              <!-- State and PIN -->
+              <div class="grid grid-cols-1 gap-4
+                          sm:grid-cols-2 sm:gap-5
+                          lg:gap-6">
+
+                <div class="min-w-0">
+                  <label for="state"
+                         class="mb-1.5 block text-sm font-medium text-stone-700
+                                sm:text-base">
+                    State *
+                  </label>
+
+                  <select id="state" name="state"
+                          autocomplete="address-level1" required
+                          class="w-full min-w-0 rounded-lg border border-stone-300
+                                 bg-white px-3 py-3 text-sm outline-none transition
+                                 focus:border-amber-700 focus:ring-2 focus:ring-amber-100
+                                 sm:rounded-xl sm:px-4 sm:py-3.5 sm:text-base
+                                 2xl:py-4 2xl:text-lg">
+                    <option value="">Select state</option>
+                    <option>Tamil Nadu</option>
+                    <option>Kerala</option>
+                    <option>Karnataka</option>
+                    <option>Andhra Pradesh</option>
+                    <option>Telangana</option>
+                    <option>Maharashtra</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <div class="min-w-0">
+                  <label for="pincode"
+                         class="mb-1.5 block text-sm font-medium text-stone-700
+                                sm:text-base">
+                    PIN Code *
+                  </label>
+
+                  <input id="pincode" name="pincode" type="text"
+                         inputmode="numeric" autocomplete="postal-code"
+                         pattern="[0-9]{6}" maxlength="6" required
+                         placeholder="6-digit PIN code"
+                         class="w-full min-w-0 rounded-lg border border-stone-300
+                                px-3 py-3 text-sm outline-none transition
+                                focus:border-amber-700 focus:ring-2 focus:ring-amber-100
+                                sm:rounded-xl sm:px-4 sm:py-3.5 sm:text-base
+                                2xl:py-4 2xl:text-lg" />
+                </div>
+              </div>
+
+              <!-- Address type -->
+              <fieldset>
+                <legend class="mb-2 text-sm font-medium text-stone-700
+                               sm:text-base">
+                  Address Type
+                </legend>
+
+                <div class="flex flex-wrap gap-3 sm:gap-4">
+
+                  <label class="inline-flex cursor-pointer items-center gap-2
+                                rounded-lg border border-stone-200 px-3 py-2.5
+                                text-sm hover:border-amber-700
+                                sm:px-4 sm:text-base">
+                    <input type="radio" name="addressType" value="Home"
+                           checked class="accent-amber-800" />
+                    Home
+                  </label>
+
+                  <label class="inline-flex cursor-pointer items-center gap-2
+                                rounded-lg border border-stone-200 px-3 py-2.5
+                                text-sm hover:border-amber-700
+                                sm:px-4 sm:text-base">
+                    <input type="radio" name="addressType" value="Work"
+                           class="accent-amber-800" />
+                    Work
+                  </label>
+
+                  <label class="inline-flex cursor-pointer items-center gap-2
+                                rounded-lg border border-stone-200 px-3 py-2.5
+                                text-sm hover:border-amber-700
+                                sm:px-4 sm:text-base">
+                    <input type="radio" name="addressType" value="Other"
+                           class="accent-amber-800" />
+                    Other
+                  </label>
+
+                </div>
+              </fieldset>
+
+              <!-- Consent -->
+              <label class="flex items-start gap-3 text-xs leading-5
+                            text-stone-600 sm:text-sm sm:leading-6">
+                <input id="consent" type="checkbox" required
+                       class="mt-1 shrink-0 accent-amber-800" />
+                <span>
+                  I agree to share these details with Sabari Craft for
+                  order confirmation and delivery.
+                </span>
+              </label>
+
+              <!-- Error message -->
+              <p id="errorMessage"
+                 class="hidden break-words rounded-lg bg-red-50 p-3
+                        text-sm text-red-700"
+                 role="alert"></p>
+
+              <!-- Submit button -->
+              <button type="submit"
+                      class="flex w-full items-center justify-center gap-2
+                             rounded-xl bg-amber-800 px-4 py-3.5
+                             text-sm font-semibold text-white
+                             transition hover:bg-amber-900
+                             focus:outline-none focus:ring-2
+                             focus:ring-amber-600 focus:ring-offset-2
+                             active:scale-[0.99]
+                             sm:py-4 sm:text-base
+                             lg:py-4
+                             2xl:py-5 2xl:text-lg">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="20" height="20" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round"
+                     aria-hidden="true">
+                  <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8
+                           8.5 8.5 0 0 1-7.6 4.7
+                           8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7
+                           a8.4 8.4 0 0 1-.9-3.8
+                           8.5 8.5 0 0 1 4.7-7.6
+                           8.4 8.4 0 0 1 3.8-.9h.5
+                           a8.5 8.5 0 0 1 8 8z"/>
+                </svg>
+
+                Continue to WhatsApp
+              </button>
+
+              <p class="text-center text-xs leading-5 text-stone-500
+                        sm:text-sm">
+                WhatsApp will open with your order details.
+                You will need to press Send.
+              </p>
+
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    // Example product data.
+    // Connect these values to the product card the customer selects.
+    const orderParams = new URLSearchParams(window.location.search);
+    const isCartCheckout = orderParams.get("source") === "cart";
+    let checkoutItems = [];
+
+    if (isCartCheckout) {
+      try {
+        const storedItems = JSON.parse(
+          localStorage.getItem("sabariCraftCheckoutItems") || "[]"
+        );
+        if (Array.isArray(storedItems)) checkoutItems = storedItems;
+      } catch (error) {
+        console.error("Could not read the cart checkout details.", error);
+      }
+    }
+
+    const selectedProduct = {
+      id: orderParams.get("id") || "",
+      name: orderParams.get("name") || "Tulsi Mala",
+      beads: orderParams.get("beads") || "108 Beads",
+      quantity: Math.max(1, Number.parseInt(orderParams.get("quantity") || "1", 10)),
+      unitPrice: Number.parseFloat(orderParams.get("unitPrice") || "299"),
+      image: orderParams.get("image") || ""
+    };
+
+    if (!Number.isFinite(selectedProduct.quantity)) selectedProduct.quantity = 1;
+    if (!Number.isFinite(selectedProduct.unitPrice) || selectedProduct.unitPrice < 0) {
+      selectedProduct.unitPrice = 299;
+    }
+
+    // Sabari Craft business WhatsApp number with country code.
+    const whatsappNumber = "918825415354";
+
+    // Render product summary safely.
+    document.getElementById("productName").textContent =
+      selectedProduct.name;
+
+    document.getElementById("productBeads").textContent =
+      selectedProduct.beads.replace(/\s+Beads?$/i, "");
+
+    document.getElementById("productQuantity").textContent =
+      selectedProduct.quantity;
+
+    document.getElementById("unitPrice").textContent =
+      "₹" + selectedProduct.unitPrice.toFixed(2);
+
+    document.getElementById("productTotal").textContent =
+      (selectedProduct.unitPrice * selectedProduct.quantity).toFixed(2);
+
+    if (isCartCheckout) {
+      const itemCount = checkoutItems.reduce(
+        (total, item) => total + Math.max(1, Number(item.quantity) || 1),
+        0
+      );
+      const cartTotal = checkoutItems.reduce(
+        (total, item) =>
+          total +
+          Math.max(0, Number(item.unitPrice ?? item.price) || 0) *
+            Math.max(1, Number(item.quantity) || 1),
+        0
+      );
+      const itemSummaries = checkoutItems.map(item => {
+        const name = String(item.name || item.title || "Devotional Mala");
+        const beads = Number.parseInt(
+          item.beadCount ?? item.beads ?? 108,
+          10
+        ) === 54 ? 54 : 108;
+        const quantity = Math.max(1, Number(item.quantity) || 1);
+        return `${name} · ${beads} beads × ${quantity}`;
+      });
+      const distinctBeadCounts = new Set(
+        checkoutItems.map(item =>
+          Number.parseInt(item.beadCount ?? item.beads ?? 108, 10) === 54
+            ? 54
+            : 108
+        )
+      );
+
+      document.getElementById("productName").textContent =
+        itemSummaries.length ? itemSummaries.join("\n") : "Your cart is empty";
+      document.getElementById("productBeads").textContent =
+        distinctBeadCounts.size === 1
+          ? String([...distinctBeadCounts][0])
+          : "Various";
+      document.getElementById("productQuantity").textContent = String(itemCount);
+      document.getElementById("unitPrice").textContent = "Varies";
+      document.getElementById("productTotal").textContent = cartTotal.toFixed(2);
+    }
+
+    const form = document.getElementById("addressForm");
+    const errorMessage = document.getElementById("errorMessage");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      errorMessage.textContent = "";
+      errorMessage.classList.add("hidden");
+
+      if (isCartCheckout && checkoutItems.length === 0) {
+        showError("Your cart is empty. Add a product before continuing.");
+        return;
+      }
+
+      if (!form.reportValidity()) return;
+
+      const customer = {
+        name: document.getElementById("fullName").value.trim(),
+        phone: document.getElementById("phone").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        address: document.getElementById("address").value.trim(),
+        landmark: document.getElementById("landmark").value.trim(),
+        city: document.getElementById("city").value.trim(),
+        district: document.getElementById("district").value.trim(),
+        state: document.getElementById("state").value,
+        pincode: document.getElementById("pincode").value.trim(),
+        addressType: form.querySelector(
+          'input[name="addressType"]:checked'
+        ).value
+      };
+
+      // Validate mobile number.
+      if (!/^[6-9]\d{9}$/.test(customer.phone)) {
+        showError("Enter a valid 10-digit Indian mobile number.");
+        return;
+      }
+
+      // Validate PIN code.
+      if (!/^\d{6}$/.test(customer.pincode)) {
+        showError("Enter a valid 6-digit PIN code.");
+        return;
+      }
+
+      // Validate required address fields.
+      if (
+        customer.name.length < 2 ||
+        customer.address.length < 5 ||
+        customer.city.length < 2 ||
+        customer.district.length < 2
+      ) {
+        showError("Please enter your complete delivery details.");
+        return;
+      }
+
+      const total = isCartCheckout
+        ? checkoutItems.reduce(
+            (sum, item) =>
+              sum +
+              Math.max(0, Number(item.unitPrice ?? item.price) || 0) *
+                Math.max(1, Number(item.quantity) || 1),
+            0
+          )
+        : selectedProduct.unitPrice * selectedProduct.quantity;
+      const productDetails = isCartCheckout
+        ? checkoutItems.map((item, index) => {
+            const name = String(item.name || item.title || "Devotional Mala");
+            const beads = Number.parseInt(
+              item.beadCount ?? item.beads ?? 108,
+              10
+            ) === 54 ? 54 : 108;
+            const quantity = Math.max(1, Number(item.quantity) || 1);
+            const unitPrice = Math.max(
+              0,
+              Number(item.unitPrice ?? item.price) || 0
+            );
+            const image = String(
+              item.whatsappImage ?? item.image ?? item.imagePath ?? ""
+            ).trim();
+            return [
+              `${index + 1}. ${name}`,
+              item.id ? "Product code: " + item.id : "",
+              "Beads: " + beads,
+              "Quantity: " + quantity,
+              "Unit price: Rs. " + unitPrice.toFixed(2),
+              "Item total: Rs. " + (unitPrice * quantity).toFixed(2),
+              image ? "Product image: " + image : ""
+            ].filter(Boolean).join("\n");
+          })
+        : [
+            "Product: " + selectedProduct.name,
+            selectedProduct.id ? "Product code: " + selectedProduct.id : "",
+            "Beads: " + selectedProduct.beads,
+            "Quantity: " + selectedProduct.quantity,
+            "Unit price: Rs. " + selectedProduct.unitPrice.toFixed(2),
+            "Listed total: Rs. " + total.toFixed(2),
+            selectedProduct.image ? "Product image: " + selectedProduct.image : ""
+          ].filter(Boolean).join("\n");
+
+      const message = [
+        "Hello Sabari Craft! I would like to enquire about this order.",
+        "",
+        "*PRODUCT DETAILS*",
+        "━━━━━━━━━━━━━━━━━━━━",
+        ...productDetails,
+        "",
+        "*💰 ORDER TOTAL: Rs. " + total.toFixed(2) + "*",
+        "",
+        "*CUSTOMER DETAILS*",
+        "━━━━━━━━━━━━━━━━━━━━",
+        "Name: " + customer.name,
+        "Mobile: " + customer.phone,
+        customer.email ? "Email: " + customer.email : "",
+        "",
+        "*DELIVERY ADDRESS*",
+        "━━━━━━━━━━━━━━━━━━━━",
+        "Address: " + customer.address,
+        customer.landmark ? "Landmark: " + customer.landmark : "",
+        "City/Town: " + customer.city,
+        "District: " + customer.district,
+        "State: " + customer.state,
+        "PIN Code: " + customer.pincode,
+        "Address type: " + customer.addressType,
+        "",
+        "Please confirm availability, final price and delivery charges."
+      ].filter(Boolean).join("\n");
+
+      const whatsappURL =
+        "https://wa.me/" + whatsappNumber +
+        "?text=" + encodeURIComponent(message);
+
+      // Open WhatsApp after the form is validated.
+      window.top.location.href = whatsappURL;
+    });
+
+    function showError(message) {
+      errorMessage.textContent = message;
+      errorMessage.classList.remove("hidden");
+    }
+  </script>
+
+  <script src="component-loader.js"></script>
+</body>
+</html>

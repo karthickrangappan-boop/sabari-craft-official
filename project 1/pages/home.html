@@ -8,9 +8,26 @@
   <title>Sabari Craft | Sacred Traditions</title>
   <meta name="description" content="Explore traditional devotional malas and handcrafted spiritual products at Sabari Craft.">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../layout/loading-screen.css">
+  <script src="../layout/loading-screen.js" defer></script>
+  <script src="../layout/product-actions.js" defer></script>
 </head>
 
 <body class="bg-[#FAF7F0] pt-[72px] text-[#33251D]">
+  <div id="site-loader" class="site-loader" role="status" aria-live="polite" aria-label="Preparing your experience">
+    <div class="site-loader__content">
+      <div class="site-loader__symbol" aria-hidden="true">
+        <span class="site-loader__om">ॐ</span>
+      </div>
+      <p class="site-loader__brand">Sabari Craft</p>
+      <p class="site-loader__tagline">Tradition · Devotion · Craftsmanship</p>
+      <div class="site-loader__track" aria-hidden="true">
+        <div class="site-loader__bar"></div>
+      </div>
+      <p class="site-loader__status">Preparing your experience<span class="site-loader__dots" aria-hidden="true"></span></p>
+      <p class="site-loader__footer">MADE WITH DEVOTION</p>
+    </div>
+  </div>
 
   <!-- Reusable Navbar -->
   <div id="navbar-placeholder"></div>
@@ -214,6 +231,32 @@
     </section>
   </main>
 
+  <div
+    id="addressModal"
+    class="fixed inset-0 z-[120] hidden items-center justify-center bg-black/60 p-3 backdrop-blur-sm sm:p-6"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="addressModalTitle"
+    aria-hidden="true"
+  >
+    <div class="relative h-[92vh] w-full max-w-4xl overflow-hidden rounded-2xl bg-white shadow-2xl sm:rounded-3xl">
+      <div class="absolute right-3 top-3 z-10">
+        <button
+          id="closeAddressModal"
+          type="button"
+          class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-2xl text-[#543821] shadow-md transition hover:bg-[#F0E5D3] focus:outline-none focus:ring-2 focus:ring-[#A46F2D]"
+          aria-label="Close address form"
+        >&times;</button>
+      </div>
+      <h2 id="addressModalTitle" class="sr-only">Enter delivery address</h2>
+      <iframe
+        id="addressFrame"
+        title="Delivery address form"
+        class="h-full w-full border-0"
+      ></iframe>
+    </div>
+  </div>
+
   <!-- Reusable Footer -->
   <div id="footer-placeholder"></div>
 
@@ -221,6 +264,37 @@
     const RUPEE = "\u20B9";
     const WHATSAPP_NUMBER = "918825415354";
     const SMALL_BEADS_PRICE_FACTOR = 0.70;
+    const addressModal = document.getElementById("addressModal");
+    const addressFrame = document.getElementById("addressFrame");
+    const closeAddressModalButton = document.getElementById("closeAddressModal");
+
+    function openAddressModal(order) {
+      const params = new URLSearchParams(order);
+      addressFrame.src = `adress.html?${params.toString()}`;
+      addressModal.classList.remove("hidden");
+      addressModal.classList.add("flex");
+      addressModal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("overflow-hidden");
+      closeAddressModalButton.focus();
+    }
+
+    function closeAddressModal() {
+      addressModal.classList.add("hidden");
+      addressModal.classList.remove("flex");
+      addressModal.setAttribute("aria-hidden", "true");
+      addressFrame.src = "about:blank";
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    closeAddressModalButton.addEventListener("click", closeAddressModal);
+    addressModal.addEventListener("click", event => {
+      if (event.target === addressModal) closeAddressModal();
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && !addressModal.classList.contains("hidden")) {
+        closeAddressModal();
+      }
+    });
 
     // Home page products and their corresponding Google Drive links.
     const products = [
@@ -314,10 +388,23 @@
       emptyMessage.classList.toggle("hidden", filtered.length > 0);
 
       grid.innerHTML = filtered.map(product => `
-        <article class="flex h-full flex-col overflow-hidden rounded-2xl border border-[#E8DCC8] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <article data-product-id="${product.id}" data-product-name="${product.name}" data-product-price="${product.price}" data-product-category="${product.category}" data-product-image="${product.image}" data-whatsapp-image="${product.whatsappImage}" data-small-price-factor="0.7" class="flex h-full flex-col overflow-hidden rounded-2xl border border-[#E8DCC8] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
 
           <!-- Compact Product Image -->
-          <div class="bg-[#FAF7F0] p-2">
+          <div class="relative bg-[#FAF7F0] p-2">
+            <div class="absolute right-4 top-4 z-10 flex flex-col gap-2">
+              <button type="button" data-product-action="wishlist" data-product-id="${product.id}" data-product-name="${product.name}"
+                      class="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#78452B] shadow-md transition hover:bg-[#F0E5D3] focus:outline-none focus:ring-2 focus:ring-[#A46F2D]"
+                      aria-pressed="false" aria-label="Add ${product.name} to wishlist"></button>
+              <button type="button" data-product-action="cart" data-product-id="${product.id}" data-product-name="${product.name}"
+                      class="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#78452B] shadow-md transition hover:bg-[#F0E5D3] focus:outline-none focus:ring-2 focus:ring-[#A46F2D]"
+                      aria-label="Add ${product.name} to cart">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                  <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/>
+                </svg>
+              </button>
+            </div>
             <div class="flex h-40 items-center justify-center overflow-hidden rounded-xl border border-[#E8DCC8] bg-white p-2 shadow-sm">
               <img
                 src="${product.image}"
@@ -528,30 +615,19 @@
       document.getElementById(`total-${product.id}`).textContent =
         formatPrice(totalPrice);
 
-      const message = [
-        "Hello Sabari Craft!",
-        "",
-        "I would like to enquire about this product:",
-        `Product: ${product.name}`,
-        `Product code: ${product.id}`,
-        `Beads: ${selectedBeads}`,
-        `Quantity: ${quantity}`,
-        `Price per mala: ${formatPrice(unitPrice)}`,
-        `Total price: ${formatPrice(totalPrice)}`,
-        `Product image: ${product.whatsappImage}`,
-        "",
-        "Please confirm availability and final price."
-      ].join("\n");
-
       if (!/^91\d{10}$/.test(WHATSAPP_NUMBER)) {
         alert("Please check the WhatsApp business number.");
         return;
       }
 
-      const whatsappURL =
-        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-
-      window.open(whatsappURL, "_blank", "noopener,noreferrer");
+      openAddressModal({
+        id: product.id,
+        name: product.name,
+        beads: selectedBeads,
+        quantity: String(quantity),
+        unitPrice: String(unitPrice),
+        image: product.whatsappImage
+      });
     });
 
     // Display products when the page loads.

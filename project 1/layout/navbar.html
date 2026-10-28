@@ -1,92 +1,301 @@
+
 <!-- navbar.html -->
-<header class="fixed top-0 left-0 right-0 z-40 w-full border-b border-[#E8DCC8] bg-white/95 backdrop-blur shadow-sm">
-  <nav class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6 sm:py-3 lg:px-8">
+<header id="sabariNavbar"
+  class="fixed left-0 right-0 top-0 z-50 w-full border-b border-[#E8DCC8] bg-white/95 shadow-sm backdrop-blur">
+
+  <nav class="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 py-2.5 sm:gap-3 sm:px-6 sm:py-3 lg:px-8">
 
     <!-- Logo -->
-    <a href="home.html" class="flex items-center group" aria-label="Sabari Craft Home">
+    <a href="home.html"
+       class="group flex shrink-0 items-center"
+       aria-label="Sabari Craft Home">
+
       <img
         src="../imgs/logo/Sabari Craft Logo.png"
         alt="Sabari Craft"
-        class="h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-105 sm:h-12 lg:h-14"
-      >
+        class="h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-105 sm:h-12 lg:h-14">
     </a>
 
     <!-- Desktop Navigation -->
-    <div class="hidden items-center gap-5 text-sm font-medium lg:flex xl:gap-7">
-      <a href="home.html"
-         class="transition hover:text-[#A46F2D]">
+    <div data-primary-navigation
+         class="hidden items-center gap-5 text-sm font-medium lg:flex xl:gap-7">
+
+      <a href="home.html" class="transition hover:text-[#A46F2D]">
         Home
       </a>
 
-      <a href="shop.html"
-         class="transition hover:text-[#A46F2D]">
+      <a href="shop.html" class="transition hover:text-[#A46F2D]">
         Shop Malas
       </a>
 
-      <a href="stories.html"
-         class="transition hover:text-[#A46F2D]">
+      <a href="stories.html" class="transition hover:text-[#A46F2D]">
         Our Stories
       </a>
 
-      <a href="about.html"
-         class="transition hover:text-[#A46F2D]">
+      <a href="about.html" class="transition hover:text-[#A46F2D]">
         About Us
       </a>
+
     </div>
 
-    <!-- Explore Button -->
-    <a href="shop.html"
-       class="hidden rounded-full bg-[#78452B] px-4 py-2.5
-              text-sm font-semibold text-white transition
-              hover:bg-[#5F3522] lg:inline-block xl:px-5">
-      Explore Collection
-    </a>
+    <!-- Wishlist, Cart and Explore -->
+    <div class="flex shrink-0 items-center gap-1 sm:gap-1.5">
+
+      <!-- Wishlist Icon -->
+      <a href="wishlist.html"
+         class="relative flex h-9 w-9 items-center justify-center rounded-full border border-[#E8DCC8] text-[#78452B] transition hover:bg-[#FAF7F0] sm:h-10 sm:w-10"
+         aria-label="Wishlist, 0 items">
+
+        <svg class="h-5 w-5"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.8"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             aria-hidden="true">
+
+          <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8z"/>
+
+        </svg>
+
+        <span id="wish-count"
+              data-wishlist-count
+              class="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-[#78452B] px-1 text-[10px] font-bold text-white">
+          0
+        </span>
+
+      </a>
+
+      <!-- Cart Icon -->
+      <a href="cart.html"
+         class="relative flex h-9 w-9 items-center justify-center rounded-full border border-[#E8DCC8] text-[#78452B] transition hover:bg-[#FAF7F0] sm:h-10 sm:w-10"
+         aria-label="Shopping cart, 0 items">
+
+        <svg class="h-5 w-5"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.8"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             aria-hidden="true">
+
+          <circle cx="9" cy="21" r="1"/>
+          <circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/>
+
+        </svg>
+
+        <span id="cart-count"
+              data-cart-count
+              class="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-[#78452B] px-1 text-[10px] font-bold text-white">
+          0
+        </span>
+
+      </a>
+
+      <!-- Desktop Explore Button -->
+      <a href="shop.html"
+         class="hidden rounded-full bg-[#78452B] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#5F3522] lg:inline-block xl:px-5">
+        Explore Collection
+      </a>
+
+    </div>
 
     <!-- Mobile Menu Button -->
     <button
       id="menuButton"
       type="button"
-      class="inline-flex min-h-11 items-center gap-2 rounded-xl border border-[#E8DCC8] px-3 py-2
-             text-sm font-semibold text-[#78452B] transition hover:bg-[#FAF7F0] focus:outline-none focus:ring-2 focus:ring-[#A46F2D] focus:ring-offset-2 lg:hidden"
+      class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#E8DCC8] p-0 text-[#78452B] transition hover:bg-[#FAF7F0] focus:outline-none focus:ring-2 focus:ring-[#A46F2D] focus:ring-offset-2 sm:h-11 sm:w-auto sm:gap-2 sm:px-3 sm:py-2 lg:hidden"
       aria-expanded="false"
       aria-controls="mobileMenu"
       aria-label="Open navigation menu">
-      <svg id="menuIcon" class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+
+      <svg id="menuIcon"
+           class="h-5 w-5"
+           viewBox="0 0 24 24"
+           fill="none"
+           aria-hidden="true">
+
+        <path d="M4 6h16M4 12h16M4 18h16"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"/>
+
       </svg>
-      <span id="menuButtonLabel">Menu</span>
+
+      <span id="menuButtonLabel" class="hidden sm:inline">
+        Menu
+      </span>
+
     </button>
 
   </nav>
 
-  <!-- Mobile Navigation -->
+  <!-- Mobile Navigation: No Duplicate Wishlist or Cart -->
   <div
     id="mobileMenu"
-    class="hidden border-t border-[#E8DCC8] bg-white px-4 py-3 shadow-lg sm:px-6 lg:hidden">
+    aria-hidden="true"
+    class="absolute left-0 right-0 top-full hidden max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-[#E8DCC8] bg-white px-4 py-4 shadow-lg sm:px-6 lg:hidden">
 
     <div class="mx-auto flex max-w-7xl flex-col gap-1 text-sm font-medium text-[#78452B]">
 
-      <a href="home.html" class="rounded-lg px-3 py-3 transition hover:bg-[#FAF7F0] hover:text-[#A46F2D]">
+      <a href="home.html"
+         class="rounded-lg px-3 py-3 transition hover:bg-[#FAF7F0] hover:text-[#A46F2D]">
         Home
       </a>
 
-      <a href="shop.html" class="rounded-lg px-3 py-3 transition hover:bg-[#FAF7F0] hover:text-[#A46F2D]">
+      <a href="shop.html"
+         class="rounded-lg px-3 py-3 transition hover:bg-[#FAF7F0] hover:text-[#A46F2D]">
         Shop Malas
       </a>
 
-      <a href="stories.html" class="rounded-lg px-3 py-3 transition hover:bg-[#FAF7F0] hover:text-[#A46F2D]">
+      <a href="stories.html"
+         class="rounded-lg px-3 py-3 transition hover:bg-[#FAF7F0] hover:text-[#A46F2D]">
         Our Stories
       </a>
 
-      <a href="about.html" class="rounded-lg px-3 py-3 transition hover:bg-[#FAF7F0] hover:text-[#A46F2D]">
+      <a href="about.html"
+         class="rounded-lg px-3 py-3 transition hover:bg-[#FAF7F0] hover:text-[#A46F2D]">
         About Us
       </a>
 
+      <!-- Mobile Explore Button -->
       <a href="shop.html"
-         class="mt-1 rounded-lg bg-[#78452B] px-4 py-3 text-center font-semibold text-white transition hover:bg-[#5F3522]">
+         class="mt-2 rounded-xl bg-[#78452B] px-4 py-3.5 text-center font-semibold text-white transition hover:bg-[#5F3522]">
         Explore Collection →
       </a>
 
     </div>
+
   </div>
+
 </header>
+
+<script>
+(() => {
+  const navbar = document.getElementById("sabariNavbar");
+
+  if (!navbar || navbar.dataset.initialized === "true") return;
+
+  navbar.dataset.initialized = "true";
+
+  const menuButton = navbar.querySelector("#menuButton");
+  const mobileMenu = navbar.querySelector("#mobileMenu");
+  const menuIcon = navbar.querySelector("#menuIcon");
+  const menuButtonLabel = navbar.querySelector("#menuButtonLabel");
+
+  const CART_KEY = "sabariCraftCart";
+  const WISHLIST_KEY = "sabariCraftWishlist";
+
+  function readStorage(key) {
+    try {
+      const value = JSON.parse(localStorage.getItem(key) || "[]");
+      return Array.isArray(value) ? value : [];
+    } catch {
+      return [];
+    }
+  }
+
+  // Mobile menu open/close
+  function setMenuOpen(isOpen) {
+    mobileMenu.classList.toggle("hidden", !isOpen);
+    mobileMenu.setAttribute("aria-hidden", String(!isOpen));
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+
+    menuButton.setAttribute(
+      "aria-label",
+      isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
+
+    if (menuButtonLabel) {
+      menuButtonLabel.textContent = isOpen ? "Close" : "Menu";
+    }
+
+    menuIcon.innerHTML = isOpen
+      ? '<path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>'
+      : '<path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>';
+  }
+
+  // Wishlist and cart badges
+  function updateBadges() {
+    const cartCount = readStorage(CART_KEY).reduce(
+      (total, item) =>
+        total + Math.max(1, Number(item.quantity) || 1),
+      0
+    );
+
+    const wishlistCount = readStorage(WISHLIST_KEY).length;
+
+    navbar.querySelectorAll("[data-cart-count]").forEach(badge => {
+      badge.textContent = cartCount;
+    });
+
+    navbar.querySelectorAll("[data-wishlist-count]").forEach(badge => {
+      badge.textContent = wishlistCount;
+    });
+
+    const cartLink = navbar.querySelector('a[href="cart.html"]');
+    const wishlistLink = navbar.querySelector('a[href="wishlist.html"]');
+
+    if (cartLink) {
+      cartLink.setAttribute(
+        "aria-label",
+        `Shopping cart, ${cartCount} ${cartCount === 1 ? "item" : "items"}`
+      );
+    }
+
+    if (wishlistLink) {
+      wishlistLink.setAttribute(
+        "aria-label",
+        `Wishlist, ${wishlistCount} ${wishlistCount === 1 ? "item" : "items"}`
+      );
+    }
+  }
+
+  // Toggle menu button
+  menuButton.addEventListener("click", () => {
+    const isOpen =
+      menuButton.getAttribute("aria-expanded") === "true";
+
+    setMenuOpen(!isOpen);
+  });
+
+  // Close after selecting a mobile navigation link
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => setMenuOpen(false));
+  });
+
+  // Close when clicking outside the navbar
+  document.addEventListener("click", event => {
+    if (
+      menuButton.getAttribute("aria-expanded") === "true" &&
+      !navbar.contains(event.target)
+    ) {
+      setMenuOpen(false);
+    }
+  });
+
+  // Close with Escape
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      setMenuOpen(false);
+    }
+  });
+
+  // Close mobile menu on desktop resize
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 1024) {
+      setMenuOpen(false);
+    }
+  });
+
+  // Sync badge counts across browser tabs
+  window.addEventListener("storage", updateBadges);
+  window.addEventListener("sabari-store-update", updateBadges);
+
+  setMenuOpen(false);
+  updateBadges();
+})();
+</script>
